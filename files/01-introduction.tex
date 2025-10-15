@@ -1,0 +1,189 @@
+\chapter{Einleitung - Eine lose Sammlung von Informationen} \label{chap:1}
+
+\section{Erosion Theorie}
+Plasma interagiert mit den Wandelementen des Plasmagefäßes, zu denen unter anderem die Divertortargets gehören. Seit OP2.2 handelt es sich bei den Targets um High Heat Flux Carbon Fibre-reinforced Carbon (HHF-CFC), der Werkstoff ist demnach Graphit. Um höheren thermischen Belastungen widerstehen zu können und Hitze effizienter abzuführen, sind die Targets durch tieferliegende Wasserleitungen gekühlt (Quelle?).\\
+
+Vom Plasma werden neben der abgestrahlten Wärme auch schnelle Ionen freigesetzt. Die eigentlich durch Magnetfelder eingeschlossenen geladenen Teilchen können beispielsweise durch Driftbewegungen oder Edge Localized Modes (ELMs) aus dem Core Plasma in die Randbereiche wandern. Dort sind die Magnetfeldlinien nicht mehr zum verdrillten Torus geschlossen, sondern öffnen sich, bis sie auf die Divertor Targets treffen. Die Ionen werden dadurch auf diese Flächen geleitet, wo sie durch ihre hohe Energie und/oder Reaktivität zur Materialabtragung führen.\\
+
+Grundsätzlich werden zwei Hauptprozesse der Erosion unterschieden, wenn W7-X betrachtet wird. Einerseits gibt es die physikalische Zerstäubung, die auf Impulsübertrag und dem Herausschlagen von Wandmaterial durch Stöße basiert. Sie ist der dominante Prozess bei Targetoberflächentemperaturen unter 600K. Andererseits können die auftreffenden Ionen aber auch durch chemische Reaktionen flüchtige Verbindungen mit den Atomen des Targets bilden, was als chemischen Erosion bezeichnet wird. Diese Erosionsart herrscht zwischen 600K und 1200K vor. Ist die Targetoberflächentemperatur noch höher, setzt strahlungsbedingte Sublimation und schließlich thermische Evaporation ein. Beide Prozesse spielen für die Untersuchung der Erosionsraten in W7-X jedoch keine übergeordnete Rolle \cite{PWI-Dirk}.\\  
+
+\subsection{Physikalische Zerstäubung}
+Physikalische Zerstäubung ist auf energetische Teilchen zurückzuführen, die durch Kollision mit den Targetatomen zu deren Emission führen. Grundsätzlich werden Stöße mit den Targetatomkernen als elastisch betrachtet, während solche unter Beteiligung von Targetelektronen als inelastisch angenommen werden. Auftreffende Ionen können daher entweder an der Oberfläche reflektiert werden oder in das Targetmaterial eindringen und dort elektronisch oder nuklear gestoppt werden. Die Eindringtiefe und der erodierende Effekt hängen dabei mit der Ionenmasse und -größe sowie der Teilchenenergie zusammen. Kleine, leichte Teilchen dringen tiefer ein als große, schwere Ionen, da es zu weniger Interaktion mit dem Targetmaterial kommt.\\
+
+Niederenergetische Teilchen führen nur wenige Stöße aus, bis sie gestoppt werden. Demnach müssen nur Stöße erster und zweiter Ordnung betrachtet werden. Das bedeutet, nur jene Targetatome, die direkt vom Projektil getroffen wurden, und solche, welche von diesen gestoßen wurden, haben die Möglichkeit, emittiert zu werden. Aus diesem Grund finden alle zugehörigen Prozesse in den obersten Schichten des Targetmaterial statt (ca. 5 \AA). Für Ionen mit mittlerer Energie bildet sich eine Kaskade aus, weil angestoßene Teilchen wiederum andere Targetatome treffen. Diese Kaskade setzt sich in Richtung der Targetoberfläche fort, wo Targetmaterial freigesetzt wird. Werden noch höhere Teilchenenergien betrachtet, kommt es zu thermischen Spikes. Diese bezeichnen eine Teilchenkaskade hoher Dichte, die durch den Übertrag großer Energiemengen in ein eher kleines Volumen innerhalb kurzer Zeit ausgelöst wird. Sie können zu hohen Temperaturen, thermischer Sublimation, Schockwellen und Kraterbildung führen \cite{PWI-Dirk, PWI-Selinger}.\\ 
+
+\subsection{Chemische Erosion}
+Chemische Erosion basiert auf der chemischen Reaktion mit den auftreffenden Ionen. Im Fall von Sauerstoff bildet sich das flüchtige Kohlenstoffmonoxid und in deutlich geringeren Mengen auch Kohlenstoffdioxid. Der gängige Literaturwert für die Teilchenausbeute \(Y_{chem,O}\) liegt bei 0.7 (Quelle?).\\
+
+Wasserstoffisotope reagieren mit den C-Atomen des Graphits zu Kohlenwasserstoff-Molekülen des Typs \(C_xH_y\) wie beispielsweise Methan. Diese sind entweder sofort flüchtig, weil das reagierende Ion und die Temperatur des Targets genug Energie zum Überwinden der Bindungsenergie bereitstellen (thermisch aktivierte Kohlenwasserstoff-Emission) oder werden später durch den Zusammenstoß energetischer Teilchen mit dem Target herausgelöst (Ionen-induzierte Desorption). Dass auch bei sehr niedrigen Targettemperaturen chemische Erosion stattfindet, hängt damit zusammen, dass komplexe Kohlenwasserstoffe an der Targetoberfläche nur schwach gebunden sind. Ihre Sublimationswärme ist deutlich niedriger als die von Graphit, sodass auch niederenergetische Ionen die Emission durch Stöße herbeiführen können \cite{PWI-Dirk, RothChemErosion}.\\
+
+Allgemein gilt für chemische Erosion: Je höher die Oberflächentemperatur des Targets (eigentlich Maximum bei 600K...) und der Teilchenfluss, desto höher die Erosionsrate. Außerdem spielt die chemische Struktur des Targets ein Rolle: Je weniger geordnet die Struktur, desto höher die Abtragung \cite{PWI-Selinger}.\\
+
+
+\subsection{Langmuir Potential}
+Für Erosionsprozesse ist die Energie der auftreffenden Ionen von zentraler Bedeutung. Bei Zusammenstößen ist der übertragene Impuls höher, je schneller das Teilchen ist und beeinflusst so die physikalische Zerstäubung. Für chemische Erosion müssen C-C-Bindungen gespalten werden, damit Wasserstoffatome die freien Bindungsstellen einnehmen können. Auch diese Energie wird durch Stoßprozesse bereitgestellt.\\
+
+Grundsätzlich ist die Geschwindigkeitsverteilung der Ionen eine Maxwell-Verteilung und abhängig von der Ionentemperatur. Daraus lässt sich die Energieverteilung herleiten, die sich allein durch die thermische Bewegung der Teilchen ergibt. Die auf den Divertor auftreffenden Ionen sind jedoch schneller als durch diese Verteilung angegeben. Der Grund dafür ist das Langmuir Potential, welches zur Ausbildung eines elektrischen Feldes führt, in dem geladene Teilchen beschleunigt werden. Im folgenden soll kurz erläutert werden, was das Langmuir Potential ist und warum es sich aufbaut.\\
+
+Werden die einzelnen Komponenten eines Plasmas betrachtet - schwere, positiv geladene Ionen und leichte, negativ geladene Elektronen - so zeigt sich, dass die Elektronentemperatur höher ist als die der Ionen. Daraus folgt, dass Elektronen mobiler sind als Ionen, ein Effekt, der durch ihre niedrigere Masse noch verstärkt wird. Demnach erreichen Elektronen eine neutrale Platte wie den Divertor schneller und laden sie gegenüber dem Plasma negativ auf. Es bildet sich ein Potentialunterschied, der zum Aufbau eines elektrischen Felds direkt über den Divertor Targets führt - dem sogenannten Langmuir Sheath. Dieses wirkt abstoßend auf weitere Elektronen, die langsamen unter ihnen erreichen den Divertor nicht mehr. Auf die positiven Ionen wird im Gegenzug eine anziehende Kraft ausgeübt, welche sie zum Target hin beschleunigt. Der Energiegewinn eines Ions durch die Beschleunigung hängt dabei von seinem Ionisationszustand und seiner Temperatur ab. Nach einer Weile stellt sich ein Gleichgewicht ein, Ionen- und Elektronenflussdichte sind an jeder Position des Langmuir Sheaths gleich. Der nun vorliegende Potentialunterschied wird als Langmuir Potential bezeichnet \cite{PWI-Dirk}.\\
+
+\subsection{Erosionsrelevante Plasmaereignisse}
+Es gibt verschiedene, zeitlich beschränkte Ereignisse im Plasma, die zu lokal erhöhten Erosionsraten führen. Sie können zum größten Teil in den Berechnungen dieser Arbeit nicht beachtet werden, erklären aber mögliche Unterschiede zu experimentell ermittelten Werten. Einige werden deshalb in diesem Abschnitt beschrieben.\\
+
+Die sogenannten ELMs (edge localized modes) bezeichnen bis zu 1 ms lange magnetohydrodynamische Ereignisse, welche durch einen periodischen Ausstoß von Teilchen und thermischer Energie aus dem Core Plasma gekennzeichnet sind. Sie werden unter anderem genutzt, um die Konzentration von Verunreinigungen im Core Plasma zu reduzieren und beispielsweise durch Fusion gebildetes Helium zu entfernen. Gleichzeitig erhöhen die sich entlang der Magnetfeldlinien ausbreitenden ELMs jedoch die Materialabtragung, da eine erhöhte Anzahl schneller Ionen auf die Wandkomponenten trifft. In Folge dessen schmelzen oder evaporieren diese, mitunter stoßen sie auch Tröpfchen flüssigen Materials ab.\\
+
+Als Hot Spots werden Bereiche von PFCs bezeichnet, die eine deutlich erhöhte Oberflächentemperatur aufweisen. Diese führt zu einer verstärkten Sublimation, von der auch Elektronen betroffen sind. Daraus ergibt sich eine Reduktion des Langmuir Potentials, wodurch die Anzahl der auf die Hot Spots treffenden Plasmaelektronen steigt. Das heizt die betroffenen Bereiche zusätzlich auf, es kommt zur Selbstverstärkung des Effekts und einer gesteigerten Abtragung von Wandmaterial.\\
+
+Zuletzt soll noch die Lichtbogenbildung (arcing) erklärt werden. Sie ist ein in instabilen Plasmas auftretender Effekt, der durch einen Potentialabfall von 10-30 V im Langmuir Sheath entsteht. Es bildet sich eine lokale Entladung mit hohen Strömen, die in Form eines Lichtbogens sichtbar werden. Die Kathode ist dabei die Wandkomponente und die Anode das Plasma. Der Lichtbogen bewegt sich dann zufällig über die Wandoberfläche und erodiert im Schnitt 10\(^{17}\) - 10\(^{18}\) Atome \cite{PWI-Dirk}.
+  
+\subsection{Maßnahmen zur Reduktion von Erosion}
+Allgemein kann Erosion reduziert werden, indem die Konzentration von Unreinheiten im Plasma reduziert wird. Besonders deutlich wird das am Beispiel von Sauerstoff, der unter anderem von den Wandelementen freigesetzt wird. Sind diese unbehandelt, so kann deutlich mehr Sauerstoff entweichen und anschließend zur Erosion der PFCs beitragen. Wird der Innenraum hingegen regelmäßig boriert, bildet sich also auf den Oberflächen der Wandkomponenten ein dünner Film aus Bor, so ist das Ausgasen von Sauerstoff deutlich geringer. Daraus resultiert eine niedrigere Abtragung von Material. Für W-7X mit ungekühltem Testdivertor ist dieser Effekt als eine Reduktion um 80\% an den Divertortargets datiert worden \cite{MarkusOP1.2a, MarkusOP1.2b}.\\
+
+Außerdem kann die Nettoerosion reduziert werden, indem abgetragene Teilchen sofort wieder abgelagert werden, im Idealfall genau an der Stelle, wo sie emittiert worden sind. Wenn sie die Targetoberfläche verlassen, sind die Verunreinigungen neutral. Sie bewegen sich daher vom Langmuir Potential und dem Magnetfeld unbeeinflusst auf geraden Bahnen, bis sie, meist durch Zusammenstöße mit Elektronen, ionisiert werden. Dann beginnen die Ionen, um die Magnetfeldlinien zu gyrieren und treffen so gegebenenfalls wieder auf das Target. Die Wahrscheinlichkeit dafür ist höher, je kleiner die Ionisationslänge im Vergleich zum Gyroradius ist und je kleiner beide Längen an sich sind.\\
+
+Zusätzlich spielt für die Wiederablagerung der Haftungskoeffizient des Ions eine Rolle. Er gibt an, wie hoch die Wahrscheinlichkeit ist, dass ein auftreffendes Ion am Target abgelagert wird. Nicht-flüchtiger atomarer Kohlenstoff und Beryllium haben beispielsweise durchgängig hohe Haftungskoeffizienten, während die von Kohlenwasserstoffen mit der Teilchenenergie variieren. Hat das auftreffende Kohlenwasserstoff-Molekül nur thermische Energie, so ist die Haftungswahrscheinlichkeit gering, während bei einigen eV der Haftungskoeffizient hoch ist. Für Teilchenenergien, die höher als die Bindungsenergie des Kohlenwasserstoffs sind, kommt es beim Auftreffen auf die Wand zum Zerfall des Moleküls in die einzelnen Atome. Diese haben dann je nach Element unterschiedliche Haftungskoeffizienten \cite{PWI-Dirk}.\\
+
+\subsection{Einfluss von Unreinheiten im Plasma}
+Unreinheiten, die ins Plasma gelangen, beeinflussen dessen Verhalten. Sind sie im Core Plasma, verunreinigen sie den Treibstoff für die Fusion und können sie bei zu hoher Konzentration zum Erliegen bringen beziehungsweise die Entzündung verhindern. Im Randbereich erhöhen Plasmaverunreinigungen die Abstrahlung von Energie, was im Extremfall zum Kollaps des Plamas führen kann. In geringen Mengen sind die Ionen dort jedoch erwünscht, um die Wärmebelastung gleichmäßig auf alle PFCs zu verteilen und die Divertoren nicht zu überhitzen. Dazu werden mitunter sogar extra Verunreinigungen erzeugt, indem Gasstöße ins Randplasma gegeben werden \cite{PWI-Dirk}.\\
+
+
+\section{Flussdichten Berechnen}
+\cite{PWI-Dirk} p.12 und 199f\\
+
+\(\Gamma\) der auftreffenden Ionen in [\(s^{-1}m^{-2}\)], \(T\) in [K], \(k_B\) in [eV/K], \(m\) in [kg], \(q_i\) in [1, 2, 3] für [H, C, O], \(n\) in [\(m^{-3}\)]\\
+
+\begin{align}
+	n_e &= \sum q_i n_i\\
+	q_i &= f_i n_e\\
+	1 &= \sum f_i q_i\\
+	\Gamma_i &= f_i \sqrt{\frac{k_B(T_e + T_i)}{m_i}} n_e^{LCFS}\\
+	T_e &= T_i\\ 
+\end{align}
+
+\section{Formeln Physikalische Zerstäubung}
+\subsection{Wasserstoff- und Sauerstoffionen auf Kohlenstoffbasierten Werkstoffen}
+\cite{PWI-Dirk} p.80ff, überarbeitete Bohdansky-Formel, eigentlich auch für Selbstzerstäubung anwendbar\\
+
+\(Q_y\) ist Tabellenwert (einheitslos), \(E_{TF}\) und \(E_{th}\) sind Tabellenwerte in [eV] (aber Formeln zur Berechnung verfügbar), Energien in [eV], \(M\) in [u], \(n\) in [m\(^{-3}\)] für das Targetmaterial, \(a_L\) wird berechnet in [m], \(f_y\) ist einheitslos, Index 1 bezieht sich auf das Ion, Index 2 auf das Targetatom
+
+\begin{align}
+	\epsilon &= \frac{E}{E_{TF}}\\
+	s_n(\epsilon) &= \frac{0.5 ln(1 + 1.2288 \epsilon)}{\epsilon + 0.1728\sqrt{\epsilon} + 0.008 \epsilon^{0.1504}}\\
+	Y(E, \alpha = 0^\circ) &= Q_y s_n(\epsilon) \left(1 - \left(\frac{E_{th}}{E}\right)^{2/3}\right) \left(1 - \frac{E_{th}}{E}\right)^{2}\\
+	f_y &= \sqrt{E_s} \left(0.94 - 0.00133 \frac{M_2}{M_1}\right)\\
+	a_L &= \frac{0.04685 \cdot 10^{-9}}{(Z_1^{2/3} + Z_2^{2/3})^{1/2}}\\
+	\gamma_k &= \frac{4 M_1 M_2}{(M_1 + M_2)^2}\\
+	\alpha_{max} &= \frac{\pi}{2} - \frac{a_L n^{1/3}}{\sqrt{2 \epsilon \sqrt{E_s/(\gamma_k E)}}}\\
+	Y(E, \alpha) &=\frac{Y(E, \alpha = 0^\circ)}{cos(\alpha)^{f_y}} exp\left(f_y \left[1 - \frac{1}{cos(\alpha)}\right] cos(\alpha_{max})\right) 
+\end{align}
+
+\subsection{Selbstzerstäubung von Kohlenstoffbasierten Werkstoffen}
+\cite{BehrischEckstein} p.101, eigentlich nicht auf Selbstzerstäubung begrenzt, aber dann muss statt \(E_s\) z.B. 1eV eingesetzt werden (Fall von Wasserstoffisotopen als Ionen)\\
+
+\begin{align}
+	\alpha_0 &= \pi - arccos\left(\sqrt{\frac{1}{1 + E/E_s}}\right)\\
+	\alpha_{max} &= \frac{2 \alpha_0}{\pi} \cdot arccos\left(\frac{b}{f}\right)^{1/c}\\
+	Y(E, \alpha) &= Y(E, \alpha = 0^\circ) \left(cos\left[\left(\frac{\pi \alpha}{2 \alpha_0}\right)^c\right]\right)^{-f} exp \left(b \left[1 - \frac{1}{cos\left[\left(\frac{\pi \alpha}{2 \alpha_0}\right)^c\right]}\right]\right)\\
+\end{align}
+
+\section{Formeln Chemische Erosion}
+\subsection{Sauerstoffionen auf Kohlenstoffbasierten Werkstoffen}
+Literaturwert von \(Y_{chem} = 0.7\) Quelle?
+
+\subsection{Wasserstoffionen auf Kohlenstoffbasierten Werkstoffen}
+\cite{PWI-Dirk} p.85f\\
+
+\(Q_y\), \(C_d\), \(c_i\) sind Tabellenwerte (einheitslos), \(E_{ths}\), \(E_{thd}\) und \(E_{th}\) sind Tabellenwerte in [eV] (aber Formeln zur Berechnung verfügbar für th), Energien und \(T_s\) in [eV], \(\Gamma\) der auftreffenden Ionen in [\(s^{-1}m^{-2}\)] 
+
+\begin{align}
+	c_i &= [1.865, 1.7, 1.535, 1.38, 1.26]\\
+	\begin{split}
+		s_i &= \frac{1}{1 + 3 \cdot 10^7 exp(-1.4/T_s)}\\ &\times \frac{2 \cdot 10^{-32} \Gamma + exp(-c_i/T_s)}{2 \cdot 10^{-32} \Gamma + (1 + 2/\Gamma \cdot 10^{29} exp(-1.8/T_s))exp(-c_i/T_s)}\\
+	\end{split}\\
+\end{align}
+\begin{align}
+	Y^{damage} &= Q_y s_n(\epsilon) \left(1 - \left(\frac{E_{thd}}{E}\right)^{2/3}\right) \left(1 - \frac{E_{thd}}{E}\right)^{2}\\
+	&= 0 \text{ if } E < E_{thd}\\
+	Y_i^{surf} &= \frac{s_i Y(E, \alpha = 0^\circ)}{1 + exp([E - 65]/40)}\\
+	&= 0 \text{ if } E < E_{ths}\\
+	Y_i^{therm} &= \frac{0.0439 s_i \cdot exp(-c_i/T_s)}{2 \cdot 10^{-32} \Gamma + exp(-c_i/T_s)}\\
+	Y_i &= Y_i^{surf} + Y_i^{therm} (1+ C_d \cdot Y^{damage})\\
+	Y_{chem}(E, T_s, \Gamma) &= \frac{Y_1 + Y_2 + Y_3}{4} + \frac{Y_4 + Y_5}{8}
+\end{align}
+
+\cite{RothChemErosion} Formel(11)ff\\
+
+Energien in [eV], \(\Gamma\) der auftreffenden Ionen in [\(s^{-1}m^{-2}\)], \(T\) in [K], \(k_B\) in [eV/K], \(D\) ist Tabellenwert (einheitslos)\\
+
+\begin{align}
+	C &= \frac{1}{1 + 10^{13} exp(-2.45/k_B T)}\\
+	c^{sp3} &= C \cdot \frac{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T)}{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T) \cdot exp(-1.8/k_B T) \cdot 2 \cdot 10^{29}/\Gamma}\\
+	Y^{therm} &= c^{sp3} \cdot \frac{0.033 exp(-1.7/k_B T)}{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T)}\\
+	Y^{surf} &= c^{sp3} \cdot \frac{Y(E, \alpha = 0^\circ)_{1eV<E_{th}<2eV}}{1 + exp((E - 90)/50)}\\
+	Y_{chem} &= Y^{surf} + Y^{therm} \cdot (1 + D \cdot Y(E, \alpha = 0^\circ))\\
+\end{align}
+
+\cite{PWI-Dirk} p.87 für hohe Teilchenflussdichten (in [\(s^{-1}m^{-2}\)])\\
+\begin{align}
+	Y_{chem}(E, T_s, \Gamma) =\frac{Y_{chem, lowflux}(E, T_s, \Gamma)}{1 + (\Gamma/(6 \cdot 10^{21}))^{0.54}}	
+\end{align}
+
+\section{Berechnung der Gesamtausbeute, Erosionsrate und -dicke}
+\subsection{Nichtberücksichtigung der Wiederablagerung}
+\cite{PWI-Dirk} p.200\\
+\(t_{discharge}\) in [s], \(\Gamma\) der auftreffenden Ionenspezies \(i\) in  [\(s^{-1}m^{-2}\)], \(T\) in [K], \(k_B\) in [eV/K], \(n\) in [m\(^{-3}\)]\\
+
+\begin{align}
+	Y_{i, total} &= \int_{3 k_B T_i q_i}^{\infty} Y_i(E) g(E) dE\\
+	\Delta_{erosion} &= \frac{t_{discharge}}{n_{carbon}} \sum \Gamma_i Y_{i,total}\\
+\end{align}
+
+\subsection{Berücksichtigung der Wiederablagerung}
+\cite{PWI-Dirk} p. 201f\\
+
+\begin{align}
+	\Gamma_{redeposition} &= s P_{redeposition} \frac{\Gamma_e \sum Y_i f_i}{1 - P_{redeposition} (Y_{self + 1 - s})}\\
+	\Gamma_{erosion,gross} &= \frac{\Gamma_e \sum Y_i f_i}{1 - P_{redeposition} (Y_{self + 1 - s})}\\
+	\Gamma_{erosion,net} &= \Gamma_{erosion,gross} - \Gamma_{redeposition}\\
+	&= (1 - s P_{redeposition}) \frac{\Gamma_e \sum Y_i f_i}{1 - P_{redeposition} (Y_{self + 1 - s})}\\
+	&= \Gamma_e Y_{eff}
+\end{align}
+
+\section{Formelzeichen}
+\begin{align*}
+	_e &- \text{Index für elektronenbezogene Größen}\\
+	_i &- \text{Index für ionenbezogene Größen}\\
+ 	k_B &- \text{Boltzmann Konstante}\\
+ 	M &- \text{Molare Masse}\\
+ 	Z &- \text{Kernladungszahl}\\
+ 	n &- \text{Teilchendichte}\\
+ 	T_s &- \text{Oberflächentemperatur des Targets}\\
+ 	\Gamma &- \text{Teilchenflussdichte}\\
+ 	f_i &- \text{Ionenkonzentration}\\
+ 	q_i	&- \text{Ionisationszustand}\\
+ 	Y &- \text{Zerstäubungsausbeute}\\
+ 	Y_{chem} &- \text{Ausbeute durch chemische Erosion}\\
+ 	Y^{damage} &- \text{Zerstäubungsausbeute für Bindungsspaltung}\\
+ 	Y^{therm} &- \text{Zerstäubungsausbeute durch thermische Sublimation}\\
+ 	Y^{surf} &- \text{Zerstäubungsausbeute durch Reaktion schneller Ionen mit Targetatomen}\\
+ 	Y^{self} &- \text{Selbstzerstäubungsausbeute}\\
+ 	s_n &- \text{Nuklearer Wirkungsquerschnitt (nuclear stopping cross section)}\\
+ 	E &- \text{Energie des auftreffenden Ions}\\
+ 	E_{TF} &- \text{Thomas-Fermi Energie}\\
+ 	E_{th} &- \text{Schwellenenergie für physikalische Zerstäubung}\\
+ 	E_{thd} &- \text{Schwellenenergie für Bindungsspaltung}\\
+ 	E_{ths} &- \text{Schwellenenergie für Reaktion schneller Ionen mit Targetatomen}\\
+ 	E_s &- \text{Sublimationswärme}\\
+ 	\epsilon &- \text{Reduzierte Energie}\\
+ 	a_L &- \text{Lindhard Screening-Länge}\\
+ 	\gamma_k &- \text{Kinematischer Faktor}\\
+ 	\alpha &- \text{Einfallswinkel der Ionen bezüglich der Flächennormalen}\\
+ 	\alpha_{max} &- \text{\(\alpha\) mit maximaler physikalischer Zerstäubungsausbeute}\\
+ 	P_{redeposition} &- \text{Wahrscheinlichkeit der Wiederablagerung}\\
+ 	s &- \text{Haftungskoeffizient}\\
+ 	Q_y &- \text{Fitparameter}\\
+ 	f_y &- \text{Yamamura Parameter}\\
+ 	b, c, f &- \text{Fitparameter für Modell nach \cite{BehrischEckstein}}\\
+ 	c_i, s_i, C_d &- \text{Parameter für chemische Erosion nach \cite{PWI-Dirk}}\\
+ 	C, D, c^{sp3} &- \text{Parameter für chemische Erosion nach \cite{RothChemErosion}}
+\end{align*}

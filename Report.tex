@@ -1,0 +1,101 @@
+%\documentclass[titlepage,twoside,a4paper,12pt,englisch,parskip=never]{scrreprt}%openright,
+
+\documentclass[paper=a4,
+fontsize=11pt,
+numbers=noenddot,%
+BCOR=10mm,          % Zusaetzlicher Rand auf der Innenseite
+DIV=11,            % Seitengroesse (siehe Koma Skript Dokumentation !)
+%twoside,			% adds additional empty pages at the end of the chapter
+english,
+openright,
+makeglossaries,
+final
+]{scrreprt}
+
+% scrbook  -- buchformat   | einseitig
+% scrreprt -- reportformat | beidseitigd
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage[bf,footnotesize]{caption}
+\usepackage{color}
+\usepackage{makeidx}
+\usepackage[final]{pdfpages}
+\usepackage[bottom]{footmisc}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{floatflt}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{nomencl}[intoc] 
+\usepackage[backend=biber,style=numeric,sorting = none]{biblatex}
+\usepackage{subfigure}
+\usepackage{multirow}
+\addbibresource{bibfile.bib}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat{pages}{#1} 
+\AtEveryBibitem{\clearfield{number}}
+
+
+
+
+
+
+\usepackage[pdfauthor={Lisa Steiniger}, pdfsubject=Bachelorthesis, pdftitle={title}, colorlinks=true, breaklinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, bookmarksopen]{hyperref}
+\urlstyle{same}
+
+\parindent 5mm											% set indent space
+
+
+%% This code creates the groups
+% -----------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+	\item[\bfseries
+	\ifstrequal{#1}{A}{Acronyms}{%
+		\ifstrequal{#1}{B}{Symbols}{%
+			\ifstrequal{#1}{C}{Physical Constants}{}}}%
+	]}
+
+% -----------------------------------------
+
+\begin{document}
+	\pagenumbering{Roman}
+	\setcounter{page}{1}
+	\input{files/00-titlepage}
+	\input{files/00-abstract}
+	
+	\tableofcontents	
+	
+    %\listoffigures
+	%\addcontentsline{toc}{chapter}{List of Figures}
+	
+    %\input{files/00-glossary}
+	%\printnomenclature[3cm]
+    %\addcontentsline{toc}{chapter}{Nomenclature}
+	
+	\newpage
+	\pagenumbering{arabic}
+	
+    \setcounter{page}{1}
+	
+	\input{files/01-introduction}
+	\input{files/02-theoretical_background}
+	\input{files/03-numerical_methods}
+	\input{files/06-summary}
+	
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Bibliography}
+	\printbibliography
+	
+	\input{files/07-appendix_a}
+	
+%	\begingroup                    %to remove the double page free after the chapter
+%	\renewcommand{\cleardoublepage}{}
+%	\renewcommand{\clearpage}{}
+	
+\end{document}

@@ -1,4 +1,7 @@
 \chapter{Einleitung - Eine lose Sammlung von Informationen} \label{chap:1}
+\section{Look-Ups}
+Divertor und Targetmodule, technische Details \cite{TM2013}\\
+(Technische) Details W7-X und Infos zu OP2 \cite{W7XtechDetailsOP2}
 
 \section{Erosion Theorie}
 Plasma interagiert mit den Wandelementen des Plasmagefäßes, zu denen unter anderem die Divertortargets gehören. Seit OP2.2 handelt es sich bei den Targets um High Heat Flux Carbon Fibre-reinforced Carbon (HHF-CFC), der Werkstoff ist demnach Graphit. Um höheren thermischen Belastungen widerstehen zu können und Hitze effizienter abzuführen, sind die Targets durch tieferliegende Wasserleitungen gekühlt (Quelle?).\\
@@ -46,6 +49,26 @@ Zusätzlich spielt für die Wiederablagerung der Haftungskoeffizient des Ions ei
 \subsection{Einfluss von Unreinheiten im Plasma}
 Unreinheiten, die ins Plasma gelangen, beeinflussen dessen Verhalten. Sind sie im Core Plasma, verunreinigen sie den Treibstoff für die Fusion und können sie bei zu hoher Konzentration zum Erliegen bringen beziehungsweise die Entzündung verhindern. Im Randbereich erhöhen Plasmaverunreinigungen die Abstrahlung von Energie, was im Extremfall zum Kollaps des Plamas führen kann. In geringen Mengen sind die Ionen dort jedoch erwünscht, um die Wärmebelastung gleichmäßig auf alle PFCs zu verteilen und die Divertoren nicht zu überhitzen. Dazu werden mitunter sogar extra Verunreinigungen erzeugt, indem Gasstöße ins Randplasma gegeben werden \cite{PWI-Dirk}.\\
 
+\section{Diagnostiken}
+In dieser Bachelorarbeit wurde mit der Plasmadichte, der Elektronentemperatur und der Oberflächentemperatur der Divertortargets gerechnet. Die zugehörigen Datensätze stammen aus dem Experimentalbetrieb von Wendelstein 7-X in OP2.2 und 2.3 und wurden mithilfe verschiedener Diagnostiken gesammelt. Zu ihnen zählen die Langmuir Sonden und die Infrarot-Kamerasysteme. Diese Diagnostiken, ihre Funktionsweise und Besonderheiten im entstehenden Datenprofil sollen in diesem Abschnitt kurz vorgestellt werden.\\ 
+
+\subsection{Langmuir Sonden}
+Langmuir Sonden sind multifunktionale Messgeräte, die im Grunde aus einem einzelnen, nicht isolierten Draht bestehen, welcher ins Plasma gehalten wird. Sie liefern lokale Messdaten für Elektronendichte und Elektronentemperatur, aber auch für Ionenflüsse und das Floating Potential. Letzteres beschreibt das an der Sonde anliegende Potential, bei dem kein Nettostrom mehr gemessen wird \cite{LPfunction}). Das dahinterstehende Messprinzip beruht darauf, dass das Einführen der Elektrode ins Plasma zur Wechselwirkung mit eben jenem führt. In Wendelstein 7-X sind die Langmuir Sonden aus Wolframdraht gefertigt, deren Spitze freigelegt ist. Wird sie ins Plasma geschoben, so passiert zunächst dasselbe, wie beim Aufbau des Langmuir Potentials über der Divertoroberfläche: Die mobileren Elektronen erreichen die Elektrode zuerst, laden sie negativ auf und stoßen damit weitere Elektronen ab, während Ionen aufgrund ihrer positiven Ladung angezogen werden. Das geschieht bis zur Einstellung eines Gleichgewichts zwischen Ionen- und Elektronenströmen. Im Gegensatz zum Divertor muss die Langmuir Sonde jedoch nicht neutral geladen sein, ihr Potential ist variabel und wird immer relativ zum Plasmapotential angegeben. Wird ein positives Potential angelegt, werden aktiv Elektronen aus dem Plasma gezogen und Ionen abgestoßen, es handelt sich um den sogenannten Elektronensättigungsbereich. Wird das Potential gesenkt und somit negativ, befindet sich die Sonde zunächst im Elektronenanlaufstrombereich, solange ihr Potential noch höher ist als das Floating Potential. Es dringen noch Elektronen bis zur Sonde vor, zeitgleich werden aber schon Ionen angezogen und der gemessene Nettostrom sinkt. Ist das Potential der Sonde gleich dem Floating Potential ist der Nettostrom gleich null, weil Elektronen- und Ionenflüsse sich ausgleichen. Sinkt das Potential noch weiter, werden vornehmlich Ionenströme gemessen, da die Mehrheit der Elektronen von der Drahtspitze fern gehalten wird. Es wird vom sogenannten Ionensättigungsbereich gesprochen. Der Verlauf dieser I(U) Kennlinie ermöglicht Rückschlüsse auf entsprechende Plasmaparameter. Der exponentielle Anstieg der Kurve im Elektronenanlaufstrombereich gibt beispielsweise Auskunft über die Energieverteilung der Elektronen und somit über deren Temperatur sowie die Elektronendichte \cite{LPBochum}.\\
+
+An dieser Stelle soll nun im Besonderen nochmal auf die Langmuir Sonden in W7-X eingegangen werden. Seit OP2 hat Wendelstein 7-X einen wassergekühlten HHF-CFC Divertor, der thermischen Belastungen bis 10 MW/m\(^2\) standhält und somit für lange Entladungen bis 30 min geeignet ist \cite{W7XtechDetailsOP2}. Die Langmuir Sonden sind zwar aus Wolfram und haben daher einen höheren Schmelzpunkt als kohlenstoffbasierte Materialien \cite{ArunLP}, sind aber im Gegensatz zum Divertor zu klein, um mit Wasser gekühlt zu werden. Zusätzlich wird durch das Einführen ins Plasma ohnehin eine deutlich höhere Belastung von 100 bis 200 MW/m\(^2\) erwartet. Eine längere Aufenthaltszeit im Plasma würde daher zweifelsohne zum Schmelzen der Sonden führen, was deren Zerstörung und außerdem die Verunreinigung des Plasmas mit Wolfram bedeutet. Um dieses Szenario zu vermeiden, handelt es sich in W7-X um sogenannte Pop-up Langmuir Sonden, die in Intervallen ins Plasma ein- und ausgefahren werden. Die Zeit im Plasma ist auf höchstens 50 ms begrenzt, die Zeit außerhalb des Plasmas dient der Abkühlung der Sonden. Dies führt zu einer diskontinuierlichen Messung mit einer Datenerhebung aller 2 bis 3 s.\\
+
+Als interessante Messpunkte wurden die zwei Bereiche des Divertors ausgemacht, in denen sich die Strikeline am häufigsten befindet: Der low-iota Bereich gegeben durch Targetmodul TM2h07 und TM3h01 sowie der high-iota Abschnitt repräsentiert durch TM8h01. Dabei war auch die Möglichkeit, überhaupt Langmuir Sonden montieren zu können, ausschlaggebend, da das Kühlungssystem des Divertors den Raum für Neuinstallationen beschränkt. Auf TM2h06 sind sechs Langmuir Sonden angebracht, die radial in einer Linie vom Pumpspalt weg angeordnet sind. Die acht Sonden auf TM3h01 sind weiter vom Pumpspalt entfernt, aber ebenso radial ausgerichtet wie die in TM2h06. Auf TM8h01 sind vier Sonden befestigt. Die Messpunkte sind in der oberen und unteren Divertor Einheit von Modul 5 an zueinander symmetrischen Positionen , sodass insgesamt 36 Messstellen zur Verfügung stehen. Allerdings sind immer nur die Sonden aktiv, in deren Bereich die Strikeline für die entsprechende Entladung fällt \cite{ArunLP}.
+
+\subsection{Infrarot-Kamerasysteme}
+Die Oberflächentemperatur des Divertors und anderer PFCs von W7-X wird durchgängig, das heißt in allen Modulen und zu allen Zeiten des Experimentalbetriebs, durch Infrarotkameras beobachtet. Das dient dem Schutz der Bauteile und des Stellarators im Allgemeinen vor lokalen Überhitzungen und den daraus resultierenden Schäden. Die Oberflächentemperatur der wird dabei nach dem folgenden Messprinzip bestimmt:\\
+
+Thermographische Kameras, welche sensitiv für Licht im infraroten Spektrum sind, ermöglichen die Messung der Oberflächentemperatur des Divertors unter Nutzung des Planck'schen Gesetz. Dieses besagt, dass jeder Körper, in Abhängigkeit seiner Oberflächentemperatur und Emissivität, Lichtspektren mit unterschiedlicher Intensitätsdistribution über die verschiedenen Wellenlängen aussendet. \ref{eq:planck} beschreibt die Energiedichte \(U\) in Bezug auf Frequenz \(f\) und die Oberflächentemperatur \(T_s\), wobei \(k_B\) die Boltzmann Konstante, \(c\) die Lichtgeschwindigkeit im Vakuum und \(h\) das Planck'sche Wirkungsquantum ist \cite{planck}.
+
+\begin{align*}
+	U(f, T) = \frac{8 \pi h f^3}{c^3 \cdot (exp\left(\frac{h f}{k_B T_s}\right) - 1}
+\end{align*}
+
+Die Energiedichteverteilung hat ihr Maximum normalerweise im infraroten Spektrum. Wird zusätzlich die Emissivität des Objekts mit einbezogen, so kann aus dem gemessenen Photonenfluss die Oberflächentemperatur errechnet werden \cite{Protection}. Konkret wird das in Wendelstein 7-X durch Bolometer umgesetzt. Einfallende Photonen treffen die Oberfläche des Messgeräts und heizen diese auf. Das wird durch Widerstandsthermometer registriert, von denen jedes einem Kamerapixel entspricht \cite{bolometer}. Oder: Einfallende Photonen treffen auf einen Schirm und heizen ihn auf. Dieser wird durch Infrarotkameras beobachtet, welche nach entsprechender Kalibration eine lokal aufgelöste Messung ermöglichen.
 
 \section{Flussdichten Berechnen}
 \cite{PWI-Dirk} p.12 und 199f\\
@@ -54,7 +77,7 @@ Unreinheiten, die ins Plasma gelangen, beeinflussen dessen Verhalten. Sind sie i
 
 \begin{align}
 	n_e &= \sum q_i n_i\\
-	q_i &= f_i n_e\\
+	n_i &= f_i n_e\\
 	1 &= \sum f_i q_i\\
 	\Gamma_i &= f_i \sqrt{\frac{k_B(T_e + T_i)}{m_i}} n_e^{LCFS}\\
 	T_e &= T_i\\ 
@@ -63,6 +86,7 @@ Unreinheiten, die ins Plasma gelangen, beeinflussen dessen Verhalten. Sind sie i
 \section{Formeln Physikalische Zerstäubung}
 \subsection{Wasserstoff- und Sauerstoffionen auf Kohlenstoffbasierten Werkstoffen}
 \cite{PWI-Dirk} p.80ff, überarbeitete Bohdansky-Formel, eigentlich auch für Selbstzerstäubung anwendbar\\
+genauere Quellen: Y(0) \cite{Bohdansky1980, Bohdansky1981, Bohdansky1984}, sn, epsilon, aL \cite{RevisedBohdansky}, Y(alpha) \cite{Yamamura}, gamma, fy, amax 168
 
 \(Q_y\) ist Tabellenwert (einheitslos), \(E_{TF}\) und \(E_{th}\) sind Tabellenwerte in [eV] (aber Formeln zur Berechnung verfügbar), Energien in [eV], \(M\) in [u], \(n\) in [m\(^{-3}\)] für das Targetmaterial, \(a_L\) wird berechnet in [m], \(f_y\) ist einheitslos, Index 1 bezieht sich auf das Ion, Index 2 auf das Targetatom
 
@@ -91,7 +115,7 @@ Unreinheiten, die ins Plasma gelangen, beeinflussen dessen Verhalten. Sind sie i
 Literaturwert von \(Y_{chem} = 0.7\) Quelle?
 
 \subsection{Wasserstoffionen auf Kohlenstoffbasierten Werkstoffen}
-\cite{PWI-Dirk} p.85f\\
+\cite{PWI-Dirk} p.85f, \cite{RothChemErosion1996}\\
 
 \(Q_y\), \(C_d\), \(c_i\) sind Tabellenwerte (einheitslos), \(E_{ths}\), \(E_{thd}\) und \(E_{th}\) sind Tabellenwerte in [eV] (aber Formeln zur Berechnung verfügbar für th), Energien und \(T_s\) in [eV], \(\Gamma\) der auftreffenden Ionen in [\(s^{-1}m^{-2}\)] 
 
@@ -123,18 +147,25 @@ Energien in [eV], \(\Gamma\) der auftreffenden Ionen in [\(s^{-1}m^{-2}\)], \(T\
 	Y_{chem} &= Y^{surf} + Y^{therm} \cdot (1 + D \cdot Y(E, \alpha = 0^\circ))\\
 \end{align}
 
-\cite{PWI-Dirk} p.87 für hohe Teilchenflussdichten (in [\(s^{-1}m^{-2}\)])\\
+\cite{chemErosionHF}, für hohe Teilchenflussdichten (1e+21 und drüber, in [\(s^{-1}m^{-2}\)])\\
 \begin{align}
 	Y_{chem}(E, T_s, \Gamma) =\frac{Y_{chem, lowflux}(E, T_s, \Gamma)}{1 + (\Gamma/(6 \cdot 10^{21}))^{0.54}}	
 \end{align}
 
 \section{Berechnung der Gesamtausbeute, Erosionsrate und -dicke}
+\subsection{Absolute Zerstäubungsausbeute}
+Energieverteilung der auftreffenden Teilchen \(g(E)\) ausgehend von einer Maxwell-Verteilung der Teilchengeschwindigkeiten und Richtungen (nur Teilchen in Richtung der Wand werden beachtet) (Quelle: Markus)\\
+Integration der energieabhängigen Zerstäubungsausbeute über alle Energien zur Abdeckung aller Teilchen, Multiplikation mit \(g(E)\) dient der Gewichtung
+\begin{align}
+	g(E) &= 4 \cdot \left(\frac{1}{2 T_i}\right)^2 exp \left(-\frac{E - 3 T_i q}{T_i}\right) (E - 3 T_i q)\\
+	Y_{i, total} &= \int_{3 k_B T_i q_i}^{\infty} Y_i(E) g(E) dE\\
+\end{align}
+
 \subsection{Nichtberücksichtigung der Wiederablagerung}
 \cite{PWI-Dirk} p.200\\
 \(t_{discharge}\) in [s], \(\Gamma\) der auftreffenden Ionenspezies \(i\) in  [\(s^{-1}m^{-2}\)], \(T\) in [K], \(k_B\) in [eV/K], \(n\) in [m\(^{-3}\)]\\
 
 \begin{align}
-	Y_{i, total} &= \int_{3 k_B T_i q_i}^{\infty} Y_i(E) g(E) dE\\
 	\Delta_{erosion} &= \frac{t_{discharge}}{n_{carbon}} \sum \Gamma_i Y_{i,total}\\
 \end{align}
 

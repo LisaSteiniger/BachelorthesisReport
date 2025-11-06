@@ -8,7 +8,7 @@ Plasma interagiert mit den Wandelementen des Plasmagefäßes (Plasma Facing Comp
 
 Vom Plasma werden neben der abgestrahlten Wärme auch schnelle Ionen freigesetzt. Die eigentlich durch Magnetfelder eingeschlossenen geladenen Teilchen können beispielsweise durch Driftbewegungen oder Edge Localized Modes (ELMs) aus dem Core Plasma in die Randbereiche wandern. Dort sind die Magnetfeldlinien nicht mehr zum verdrillten Torus geschlossen, sondern öffnen sich, bis sie auf die Divertor Targets treffen. Die Ionen werden dadurch auf diese Flächen geleitet, wo sie durch ihre hohe Energie und/oder Reaktivität zur Materialabtragung führen.\\
 
-Grundsätzlich werden zwei Hauptprozesse der Erosion unterschieden, wenn W7-X betrachtet wird. Einerseits gibt es die physikalische Zerstäubung, die auf Impulsübertrag und dem Herausschlagen von Wandmaterial durch Stöße basiert. Sie ist der dominante Prozess bei Targetoberflächentemperaturen unter \qty[per-mode = symbol]{600}{\K}. Andererseits können die auftreffenden Ionen aber auch durch chemische Reaktionen flüchtige Verbindungen mit den Atomen des Targets bilden, was als chemischen Erosion bezeichnet wird. Diese Erosionsart herrscht zwischen \qty[per-mode = symbol]{600}{\K} und \qty[per-mode = symbol]{1200}{\K} vor. Ist die Targetoberflächentemperatur noch höher, setzt strahlungsbedingte Sublimation und schließlich thermische Evaporation ein. Beide Prozesse spielen für die Untersuchung der Erosionsraten in W7-X jedoch keine übergeordnete Rolle \cite{PWI-Dirk}.\\  
+Grundsätzlich werden zwei Hauptprozesse der Erosion unterschieden, wenn W7-X betrachtet wird. Einerseits gibt es die physikalische Zerstäubung, die auf Impulsübertrag und dem Herausschlagen von Wandmaterial durch Stöße basiert. Sie ist der dominante Prozess bei Targetoberflächentemperaturen unter \qty[per-mode = symbol]{600}{\K}. Andererseits können die auftreffenden Ionen aber auch durch chemische Reaktionen flüchtige Verbindungen mit den Atomen des Targets bilden, was als chemische Erosion bezeichnet wird. Diese Erosionsart herrscht zwischen \qty[per-mode = symbol]{600}{\K} und \qty[per-mode = symbol]{1200}{\K} vor. Ist die Targetoberflächentemperatur noch höher, setzt strahlungsbedingte Sublimation und schließlich thermische Evaporation ein. Beide Prozesse spielen für die Untersuchung der Erosionsraten in W7-X jedoch keine übergeordnete Rolle \cite{PWI-Dirk}.\\  
 
 \subsection{Physikalische Zerstäubung}
 Physikalische Zerstäubung ist auf energetische Teilchen zurückzuführen, die durch Kollision mit den Targetatomen zu deren Emission führen. Grundsätzlich werden Stöße mit den Targetatomkernen als elastisch betrachtet, während solche unter Beteiligung von Targetelektronen als inelastisch angenommen werden. Auftreffende Ionen können daher entweder an der Oberfläche reflektiert werden oder in das Targetmaterial eindringen und dort elektronisch oder nuklear gestoppt werden. Die Eindringtiefe und der erodierende Effekt hängen dabei mit der Ionenmasse und -größe sowie der Teilchenenergie zusammen. Kleine, leichte Teilchen dringen tiefer ein als große, schwere Ionen, da es zu weniger Interaktion mit dem Targetmaterial kommt.\\
@@ -127,7 +127,7 @@ Fitparameter, die zur Berechnung benötigt werden sind \(f(E)\), \(b(E)\), \(c(E
 \begin{align}
 	\alpha_0 &= \pi - arccos\left(\sqrt{\frac{1}{1 + E/E_s}}\right)\\
 	\alpha_{max} &= \frac{2 \alpha_0}{\pi} \cdot arccos\left(\frac{b}{f}\right)^{1/c}\\
-	Y(E, \alpha) &= Y(E, \alpha = 0^\circ) \left(cos\left[\left(\frac{\pi \alpha}{2 \alpha_0}\right)^c\right]\right)^{-f} exp \left(b \left[1 - \frac{1}{cos\left[\left(\frac{\pi \alpha}{2 \alpha_0}\right)^c\right]}\right]\right)\\
+	Y(E, \alpha) &= Y(E, \alpha = 0^\circ) \left(cos\left[\left(\frac{\pi \alpha}{2 \alpha_0}\right)^c\right]\right)^{-f} exp \left(b \left[1 - \frac{1}{cos\left[\left(\frac{\pi \alpha}{2 \alpha_0}\right)^c\right]}\right]\right)\label{eq:YphysEck}\\
 \end{align}
 
 In dieser Arbeit wird die obige Gleichung zur Berechnung der Selbstzerstäubung von Kohlenstoff genutzt \cite{BehrischEckstein} p.101.
@@ -157,7 +157,7 @@ Da chemische Erosion durch Wasserstoffionen eine Abhängigkeit von der Anzahl de
 für die Konzentrationen und Ionendichten der einzelnen Ionen. Für die zugehörigen Flussdichten ermöglicht folgender Zusammenhang die Berechnung: 
 
 \begin{align}
-	\Gamma_i &= f_i \sqrt{\frac{k_B(T_e + T_i)}{m_i}} n_e^{LCFS} \text{.}\\
+	\Gamma_i &= f_i \sqrt{\frac{k_B(T_e + T_i)}{m_i}} n_e^{LCFS} \text{.}\label{eq:flux}\\
 \end{align}
 
 Vereinfachend wird in der Fusionsforschung oft \(T_e = T_i\) angenommen \cite{PWI-Dirk} p.12 und 199f.\\
@@ -182,16 +182,16 @@ Der semi-empirische Charakter der Formeln geht mit der Nutzung verschiedenster F
 
 Für fünf Subprozesse der chemischen Erosion wird zuerst das einheitslose \(s_i\) aus \(T_s\) und \(c_i\) sowie \(\Gamma\) berechnet.
 
-\begin{align}
+\begin{align*}
 	c_i &= [1.865, 1.7, 1.535, 1.38, 1.26] \label{eq:ci}\\
 	\begin{split}
 		s_i &= \frac{1}{1 + 3 \cdot 10^7 exp(-1.4/T_s)}\\ &\times \frac{2 \cdot 10^{-32} \Gamma + exp(-c_i/T_s)}{2 \cdot 10^{-32} \Gamma + (1 + 2/\Gamma \cdot 10^{29} exp(-1.8/T_s))exp(-c_i/T_s)}\\
 	\end{split}\\
-\end{align}
+\end{align*}
 
 Anschließend wird jeweils \(Y_{surf}\) für thermisch aktivierte Kohlenwasserstoff-Emission sowie \(Y_{damage}\) und \(Y_{therm}\) für Ionen-induzierte Desorption berechnet und zur Gesamtausbeute des Subprozesses zusammengefügt. dabei ist \(s_n\) der nukleare Wirkungsquerschnitt nach Eq. \ref{eq:sn} und \(Y(E, \alpha=0^\circ)\) die physikalische Zerstäubungsausbeute bei senkrechtem Auftreffen der Ionen auf das Target nach Eq. \ref{eq:Y0}. Zuletzt werden die einzelnen Subprozesse aufaddiert.
 
-\begin{align}
+\begin{align*}
 	Y^{damage} &= Q_y s_n(\epsilon) \left(1 - \left(\frac{E_{thd}}{E}\right)^{2/3}\right) \left(1 - \frac{E_{thd}}{E}\right)^{2}\\
 	&= 0 \text{ if } E < E_{thd}\\
 	Y_i^{surf} &= \frac{s_i Y(E, \alpha = 0^\circ)}{1 + exp([E - 65]/40)} \text{MIT ETHS ODER MIT ETH???}\\
@@ -199,7 +199,7 @@ Anschließend wird jeweils \(Y_{surf}\) für thermisch aktivierte Kohlenwasserst
 	Y_i^{therm} &= \frac{0.0439 s_i \cdot exp(-c_i/T_s)}{2 \cdot 10^{-32} \Gamma + exp(-c_i/T_s)}\\
 	Y_i &= Y_i^{surf} + Y_i^{therm} (1+ C_d \cdot Y^{damage})\\
 	Y_{chem}(E, T_s, \Gamma) &= \frac{Y_1 + Y_2 + Y_3}{4} + \frac{Y_4 + Y_5}{8}
-\end{align}
+\end{align*}
 
 Die berechnete Gesamtausbeute ist eine gute Näherung für niedrige Flussdichten unter \qty[per-mode = symbol]{e21}{\per\m^{2}\per\s} \cite{PWI-Dirk} p.85f, \cite{RothChemErosion1996}.\\
 
@@ -210,10 +210,10 @@ Alternativ zur obigen Version kann die chemische Erosion durch Wasserstoff auch 
 	c^{sp3} &= C \cdot \frac{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T_s)}{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T_s) \cdot exp(-1.8/k_B T_s) \cdot 2 \cdot 10^{29}/\Gamma}\\
 	Y^{therm} &= c^{sp3} \cdot \frac{0.033 exp(-1.7/k_B T)}{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T)}\\
 	Y^{surf} &= c^{sp3} \cdot \frac{Y(E, \alpha = 0^\circ)_{1eV<E_{th}<2eV}}{1 + exp((E - 90)/50)}\\
-	Y_{chem} &= Y^{surf} + Y^{therm} \cdot (1 + C_d \cdot Y(E, \alpha = 0^\circ))\\
+	Y_{chem} &= Y^{surf} + Y^{therm} \cdot (1 + C_d \cdot Y(E, \alpha = 0^\circ))\label{eq:YchemRoth}\\
 \end{align}
 
-Sie ist ebenso semi-empirisch, verzichtet jedoch auf die Unterteilung in Subprozesse abgesehen von thermisch aktivierter Kohlenwasserstoff-Emission und Ionen-induzierter Desorption. Die Teilchenenergie \(E\) ist in (\unit{eV}) anzugeben, die Ionenflussdichte \(\Gamma\) in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}), während die Oberflächentemperatur des Targets \(T_s\) in (\unit{K}) eingesetzt werden muss. Die Boltzmann-Konstante \(k_B\) ist gegeben in (\unit[per-mode = symbol]{\eV\per\K}), der Tabellenwert \(C_d\) ist einheitslos. \(Y(E, \alpha=0^\circ)\) ist die physikalische Zerstäubungsausbeute bei senkrechtem Auftreffen der Ionen auf das Target nach Eq. \ref{eq:Y0}, wobei statt \(E_{th}\) \(E_{ths}\) in (\unit{eV}) eingesetzt wird (Tab. \ref{tab:ParameterChem}). Auch hier gilt wieder, dass die berechnete Gesamtausbeute nur für niedrige Flussdichten unter \qty[per-mode = symbol]{e21}{\per\m\tothe{2}\per\s} eine gute Näherung ist \cite{RothChemErosion} Formel(11)ff\\.
+Sie ist ebenso semi-empirisch, verzichtet jedoch auf die Unterteilung in Subprozesse abgesehen von thermisch aktivierter Kohlenwasserstoff-Emission und Ionen-induzierter Desorption. Die Teilchenenergie \(E\) ist in (\unit{eV}) anzugeben, die Ionenflussdichte \(\Gamma\) in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}), während die Oberflächentemperatur des Targets \(T_s\) in (\unit{K}) eingesetzt werden muss. Die Boltzmann-Konstante \(k_B\) ist gegeben in (\unit[per-mode = symbol]{\eV\per\K}), der Tabellenwert \(C_d\) ist einheitslos. \(Y(E, \alpha=0^\circ)\) ist die physikalische Zerstäubungsausbeute bei senkrechtem Auftreffen der Ionen auf das Target nach Eq. \ref{eq:Y0}, wobei statt \(E_{th}\) \(E_{ths}\) in (\unit{eV}) eingesetzt wird (Tab. \ref{tab:ParameterChem}). Auch hier gilt wieder, dass die berechnete Gesamtausbeute nur für niedrige Flussdichten unter \qty[per-mode = symbol]{e21}{\per\m\tothe{2}\per\s} eine gute Näherung ist \cite{RothChemErosion} Formel(11)ff.\\
 
 Wenn hohe Ionenflüsse auf eine Oberfläche treffen, hat das zur Folge, dass die obigen Formeln zur Beschreibung der chemischen Erosion die in der Realität beobachteten Ergebnisse nicht richtig abbilden. In diesem Fall kann durch die folgende Korrekturformel nachgebessert werden. Von hohen Ionenflüssen wird dabei gesprochen, sofern die Teilchenflussdichte bei mindestens \qty[per-mode = symbol]{e21}{\per\m\tothe{2}\per\s} liegt. \(\Gamma\) ist in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}) einzusetzen\cite{chemErosionHF}.
 
@@ -226,13 +226,14 @@ Zur Berechnung der Gesamtausbeute sollen alle Teilchenenergien beachtet werden, 
 
 \begin{align}
 	g(E) &= 4 \cdot \left(\frac{1}{2 T_i}\right)^2 exp \left(-\frac{E - 3 T_i q}{T_i}\right) (E - 3 T_i q)\\
-	Y_{i, total} &= \int_{3 k_B T_i q_i}^{\infty} Y_i(E) g(E) dE\\
+	Y_{i, total} &= \int_{3 k_B T_i q_i}^{\infty} Y_i(E) g(E) dE\label{eq:totalY}\\
 \end{align}
 
-Wird die Bruttoerosion betrachtet, die Wiederablagerung also nicht berücksichtigt, so gilt für die Dicke der abgetragenen Schicht \(\Delta_{erosion}\) in (\unit{m})
+Wird die Bruttoerosion betrachtet, die Wiederablagerung also nicht berücksichtigt, so gilt für die Dicke der abgetragenen Schicht \(\Delta_{erosion}\) in (\unit{m}) sowie die Erosionsrate \(\Delta_{erosion}/t_{discharge}\) in (\unit[per-mode = symbol]{\m\per\s})
 
 \begin{align}
-	\Delta_{erosion} &= \frac{t_{discharge}}{n_{carbon}} \sum \Gamma_i Y_{i,total}\\
+	\frac{\Delta_{erosion}}{t_{discharge}} &= \frac{1}{n_{carbon}} \sum \Gamma_i Y_{i,total}\label{eq:erosionRate}\\
+	\Delta_{erosion} &= \frac{t_{discharge}}{n_{carbon}} \sum \Gamma_i Y_{i,total}\label{eq:erosionLayer}\\
 \end{align}
 
 bei eingesetzter Entladungszeit \(t_{discharge}\) in (\unit{s}) und der Atomdichte \(n_{carbon}\) in (\unit[per-mode = symbol]{\per\m\tothe{3}})\cite{PWI-Dirk} p.200.
@@ -254,7 +255,7 @@ Die auf den Divertor auftreffenden Ionen sind jedoch schneller als durch diese V
 
 Im folgenden soll kurz erläutert werden, was das Langmuir Potential ist und warum es sich aufbaut.\\
 
-Werden die einzelnen Komponenten eines Plasmas betrachtet - schwere, positiv geladene Ionen und leichte, negativ geladene Elektronen - so zeigt sich, dass die Elektronentemperatur höher ist als die der Ionen. Daraus folgt, dass Elektronen mobiler sind als Ionen, ein Effekt, der durch ihre niedrigere Masse noch verstärkt wird. Demnach erreichen Elektronen eine neutrale Platte wie den Divertor schneller und laden sie gegenüber dem Plasma negativ auf. Es bildet sich ein Potentialunterschied, der zum Aufbau eines elektrischen Felds direkt über den Divertortargets führt - dem sogenannten Langmuir Sheath. Dieses wirkt abstoßend auf weitere Elektronen, die langsamen unter ihnen erreichen den Divertor nicht mehr. Auf die positiven Ionen wird im Gegenzug eine anziehende Kraft ausgeübt, welche sie zum Target hin beschleunigt. Der Energiegewinn eines Ions durch die Beschleunigung hängt dabei von seinem Ionisationszustand und seiner Temperatur ab. Nach einer Weile stellt sich ein Gleichgewicht ein, Ionen- und Elektronenflussdichte sind an jeder Position des Langmuir Sheaths gleich. Der nun zwischen Plasma und Divertor vorliegende Potentialunterschied wird als Langmuir Potential bezeichnet \cite{PWI-Dirk}.\\
+Werden die einzelnen Komponenten eines Plasmas betrachtet - schwere, positiv geladene Ionen und leichte, negativ geladene Elektronen - so zeigt sich, dass die Elektronentemperatur höher ist als die der Ionen. Daraus folgt, dass Elektronen mobiler sind als Ionen, ein Effekt, der durch ihre niedrigere Masse noch verstärkt wird. Demnach erreichen Elektronen eine neutrale Platte wie den Divertor schneller und laden sie gegenüber dem Plasma negativ auf. Es bildet sich ein Potentialunterschied, der zum Aufbau eines elektrischen Felds direkt über den Divertortargets führt - dem sogenannten Langmuir Sheath. Dieses wirkt abstoßend auf weitere Elektronen, die langsamen unter ihnen erreichen den Divertor nicht mehr. Auf die positiven Ionen wird im Gegenzug eine anziehende Kraft ausgeübt, welche sie zum Target hin beschleunigt. Der Energiegewinn eines Ions durch die Beschleunigung hängt dabei von seinem Ionisationszustand und seiner Temperatur ab. Nach einer Weile stellt sich ein Gleichgewicht ein, Ionen- und Elektronenflussdichte sind an jeder Position des Langmuir Sheaths gleich. Der nun zwischen Plasma und Divertor vorliegende Potentialunterschied wird als Langmuir Potential bezeichnet. Im Falle eines externen Magnetfelds ist dem Langmuir Sheath noch ein Presheath vorgelagert. In dieser Zone ist der Potentialunterschied zum Plasma deutlich geringer und im Gegensatz zum Langmuir Sheath herrscht hier Quasineutralität \cite{PWI-Dirk}.\\
 
 \subsection{Erosionsrelevante Plasmaereignisse}
 Es gibt verschiedene, zeitlich beschränkte Ereignisse im Plasma, die zu lokal erhöhten Erosionsraten führen. Sie können zum größten Teil in den Berechnungen dieser Arbeit nicht beachtet werden, erklären aber mögliche Unterschiede zu experimentell ermittelten Werten. Einige werden deshalb in diesem Abschnitt beschrieben.\\
@@ -273,7 +274,7 @@ Außerdem kann die Nettoerosion reduziert werden, indem abgetragene Teilchen sof
 Zusätzlich spielt für die Wiederablagerung der Haftungskoeffizient des Ions eine Rolle. Er gibt an, wie hoch die Wahrscheinlichkeit ist, dass ein auftreffendes Ion am Target abgelagert wird. Nicht-flüchtiger atomarer Kohlenstoff und Beryllium haben beispielsweise durchgängig hohe Haftungskoeffizienten, während die von Kohlenwasserstoffen mit der Teilchenenergie variieren. Hat das auftreffende Kohlenwasserstoff-Molekül nur thermische Energie, so ist die Haftungswahrscheinlichkeit gering, während bei einigen \unit{eV} der Haftungskoeffizient hoch ist. Für Teilchenenergien, die höher als die Bindungsenergie des Kohlenwasserstoffs sind, kommt es beim Auftreffen auf die Wand zum Zerfall des Moleküls in die einzelnen Atome. Diese haben dann je nach Element unterschiedliche Haftungskoeffizienten \cite{PWI-Dirk}.\\
 
 \subsubsection{Einfluss der Wiederablagerung}
-Die Berücksichtigung der Wiederablagerung führt zu einer Reduktion der Teilchenflussdichten von Targetatomen \(\Gamma_{erosion,net}\)und reduziert somit die Dicke der Erosionsschicht \(\Delta_{erosion}\). Dabei werden Bruttoerosion und Wiederablagerung gegengerechnet, indem ihre Teilchenflussdichten, \(\Gamma_{erosion,gross}\) und \(\Gamma_{redeposition}\),  subtrahiert werden. Dieser Effekt kann unter Kenntnis der Wahrscheinlichkeit der Wiederablagerung \(P_{redeposition}\), des Haftungskoeffizienten von C-Atomen auf kohlenstoffbasierten Oberflächen \(s\) sowie der Zerstäubungsausbeute \(Y_i\) und der Konzentration \(f_i\) der Fremdionen berechnet werden. Alle diese Größen sind einheitslos. Außerdem müssen die Werte für die Selbstzerstäubungsausbeute \(Y_{self}\) (einheitslos), den Elektronenfluss \(\Gamma_e\) in (\unit{\per\m\tothe{2}\per\s}), die Entladungszeit \(t_{discharge}\) in (\unit{s}) und die Atomdichte \(n_{carbon}\) in (\unit[per-mode = symbol]{\per\m\tothe{3}}) vorliegen. 
+Die Berücksichtigung der Wiederablagerung führt zu einer Reduktion der Teilchenflussdichten von Targetatomen \(\Gamma_{erosion,net}\)und reduziert somit die Dicke der Erosionsschicht \(\Delta_{erosion}\). Dabei werden Bruttoerosion und Wiederablagerung gegengerechnet, indem ihre Teilchenflussdichten, \(\Gamma_{erosion,gross}\) und \(\Gamma_{redeposition}\),  subtrahiert werden. Dieser Effekt kann unter Kenntnis der Wahrscheinlichkeit der Wiederablagerung \(P_{redeposition}\), des Haftungskoeffizienten von C-Atomen auf kohlenstoffbasierten Oberflächen \(s\) sowie der Zerstäubungsausbeute \(Y_i\) und der Konzentration \(f_i\) der Fremdionen berechnet werden. Alle diese Größen sind einheitslos. Außerdem müssen die Werte für die Selbstzerstäubungsausbeute \(Y_{self}\) (einheitslos), den Elektronenfluss \(\Gamma_e\) in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}), die Entladungszeit \(t_{discharge}\) in (\unit{s}) und die Atomdichte \(n_{carbon}\) in (\unit[per-mode = symbol]{\per\m\tothe{3}}) vorliegen. 
 
 \begin{align}
 	\Gamma_{redeposition} &= s P_{redeposition} \frac{\Gamma_e \sum Y_i f_i}{1 - P_{redeposition} (Y_{self + 1 - s})}\\
@@ -284,77 +285,8 @@ Die Berücksichtigung der Wiederablagerung führt zu einer Reduktion der Teilche
 	\Delta_{erosion} &= \frac{t_{discharge}}{n_{carbon}} \cdot \Gamma_{erosion,net}
 \end{align}
 
-\(\Gamma\) wird in (\unit{\per\m\tothe{2}\per\s}) ausgegeben, \(\Delta_{erosion}\) in (\unit{m}) \cite{PWI-Dirk} p. 201f.
+\(\Gamma\) wird in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}) ausgegeben, \(\Delta_{erosion}\) in (\unit{m}) \cite{PWI-Dirk} p. 201f.
 
 \subsection{Einfluss von Unreinheiten im Plasma}
 Unreinheiten, die ins Plasma gelangen, beeinflussen dessen Verhalten. Sind sie im Core Plasma, verunreinigen sie den Treibstoff für die Fusion und können sie bei zu hoher Konzentration zum Erliegen bringen beziehungsweise die Entzündung verhindern. Im Randbereich erhöhen Plasmaverunreinigungen die Abstrahlung von Energie, was im Extremfall zum Kollaps des Plamas führen kann. In geringen Mengen sind die Ionen dort jedoch erwünscht, um die Wärmebelastung gleichmäßig auf alle PFCs zu verteilen und die Divertoren nicht zu überhitzen. Dazu werden mitunter sogar extra Verunreinigungen erzeugt, indem Gasstöße ins Randplasma gegeben werden \cite{PWI-Dirk}.\\
 
-\section{Diagnostiken}
-In dieser Bachelorarbeit wurde mit der Plasmadichte, der Elektronentemperatur und der Oberflächentemperatur der Divertortargets gerechnet. Die zugehörigen Datensätze stammen aus dem Experimentalbetrieb von Wendelstein 7-X in OP2.2 und 2.3 und wurden mithilfe verschiedener Diagnostiken gesammelt. Zu ihnen zählen die Langmuir Sonden und die Infrarot-Kamerasysteme. Diese Diagnostiken, ihre Funktionsweise und Besonderheiten im entstehenden Datenprofil sollen in diesem Abschnitt kurz vorgestellt werden.\\ 
-
-\subsection{Langmuir Sonden}
-Langmuir Sonden sind multifunktionale Messgeräte, die im Grunde aus einem einzelnen, nicht isolierten Draht bestehen, welcher ins Plasma gehalten wird. Sie liefern lokale Messdaten für Elektronendichte und Elektronentemperatur, aber auch für Ionenflüsse und das Floating Potential. Letzteres beschreibt das an der Sonde anliegende Potential, bei dem kein Nettostrom mehr gemessen wird \cite{LPfunction}. Das dahinterstehende Messprinzip beruht darauf, dass das Einführen der Elektrode ins Plasma zur Wechselwirkung mit eben jenem führt.\\
-
-Wird die Langmuir Sonde ins Plasma geschoben, so passiert zunächst dasselbe, wie beim Aufbau des Langmuir Potentials über der Divertoroberfläche: Die mobileren Elektronen erreichen die Elektrode zuerst, laden sie negativ auf und stoßen damit weitere Elektronen ab, während Ionen aufgrund ihrer positiven Ladung angezogen werden. Das geschieht bis zur Einstellung eines Gleichgewichts zwischen Ionen- und Elektronenströmen.\\
-
-Im Gegensatz zum Divertor muss die Langmuir Sonde jedoch nicht neutral geladen sein, ihr Potential ist variabel und wird immer relativ zum Plasmapotential angegeben. Wird ein positives Potential angelegt, werden aktiv Elektronen aus dem Plasma gezogen und Ionen abgestoßen, es handelt sich um den sogenannten Elektronensättigungsbereich. Wird das Potential gesenkt und somit negativ, befindet sich die Sonde zunächst im Elektronenanlaufstrombereich, solange ihr Potential noch höher ist als das Floating Potential. Es dringen noch Elektronen bis zur Sonde vor, zeitgleich werden aber schon Ionen angezogen und der gemessene Nettostrom sinkt. Ist das Potential der Sonde gleich dem Floating Potential ist der Nettostrom gleich null, weil Elektronen- und Ionenflüsse sich ausgleichen. Sinkt das Potential noch weiter, werden vornehmlich Ionenströme gemessen, da die Mehrheit der Elektronen von der Drahtspitze fern gehalten wird. Es wird vom sogenannten Ionensättigungsbereich gesprochen. Der Verlauf dieser I(U) Kennlinie ermöglicht Rückschlüsse auf entsprechende Plasmaparameter. Der exponentielle Anstieg der Kurve im Elektronenanlaufstrombereich gibt beispielsweise Auskunft über die Energieverteilung der Elektronen und somit über deren Temperatur sowie die Elektronendichte \cite{LPBochum}.\\
-
-An dieser Stelle soll nun im Besonderen nochmal auf die Langmuir Sonden in W7-X eingegangen werden. Seit OP2 hat Wendelstein 7-X einen wassergekühlten HHF-CFC Divertor, der thermischen Belastungen bis \qty[per-mode = symbol]{10}{\MW\per\m\tothe{2}} standhält und somit für lange Entladungen bis \qty{30}{min} geeignet ist \cite{W7XtechDetailsOP2}. Die Langmuir Sonden sind zwar aus Wolfram und haben daher einen höheren Schmelzpunkt als kohlenstoffbasierte Materialien \cite{ArunLP}, sind aber im Gegensatz zum Divertor zu klein, um mit Wasser gekühlt zu werden. Zusätzlich wird durch das Einführen ins Plasma ohnehin eine deutlich höhere Belastung von \qty[per-mode = symbol]{100}{\MW\per\m\tothe{2}} bis \qty[per-mode = symbol]{200}{\MW\per\m\tothe{2}} erwartet. Eine längere Aufenthaltszeit im Plasma würde daher zweifelsohne zum Schmelzen der Sonden führen, was deren Zerstörung und außerdem die Verunreinigung des Plasmas mit Wolfram bedeutet. Um dieses Szenario zu vermeiden, handelt es sich in W7-X um sogenannte Pop-up Langmuir Sonden, die in Intervallen ins Plasma ein- und ausgefahren werden. Die Zeit im Plasma ist auf höchstens \qty{50}{ms} begrenzt, die Zeit außerhalb des Plasmas dient der Abkühlung der Sonden. Dies führt zu einer diskontinuierlichen Messung mit einer Datenerhebung aller \qty{2}{s} bis \qty{3}{s}.\\
-
-Als interessante Messpunkte wurden die zwei Bereiche des Divertors ausgemacht, in denen sich die Strikeline am häufigsten befindet: Der low-iota Bereich gegeben durch Targetelement TM2h07 und TM3h01 sowie der high-iota Abschnitt repräsentiert durch TM8h01. Dabei war auch die Möglichkeit, überhaupt Langmuir Sonden montieren zu können, ausschlaggebend, da das Kühlungssystem des Divertors den Raum für Neuinstallationen beschränkt. Auf TM2h06 sind sechs Langmuir Sonden angebracht, die radial in einer Linie vom Pumpspalt weg angeordnet sind. Die acht Sonden auf TM3h01 sind weiter vom Pumpspalt entfernt, aber ebenso radial ausgerichtet wie die in TM2h06. Auf TM8h01 sind vier Sonden befestigt. Die Messpunkte sind in der oberen und unteren Divertor Einheit von Modul 5 an zueinander symmetrischen Positionen , sodass insgesamt 36 Messstellen zur Verfügung stehen. Allerdings sind immer nur die Sonden aktiv, in deren Bereich die Strikeline für die entsprechende Entladung fällt \cite{ArunLP}.
-
-\subsection{Infrarot-Kamerasysteme}
-Die Oberflächentemperatur des Divertors und anderer PFCs von W7-X wird durchgängig, das heißt in allen Modulen und zu allen Zeiten des Experimentalbetriebs, durch Infrarotkameras beobachtet. Das dient dem Schutz der Bauteile und des Stellarators im Allgemeinen vor lokalen Überhitzungen und den daraus resultierenden Schäden. Die Oberflächentemperatur der wird dabei nach dem folgenden Messprinzip bestimmt.\\
-
-Thermographische Kameras, welche sensitiv für Licht im infraroten Spektrum sind, ermöglichen die Messung der Oberflächentemperatur des Divertors unter Nutzung des Planck'schen Strahlungsgesetzes. Dieses besagt, dass jeder Körper, in Abhängigkeit seiner Oberflächentemperatur und Emissivität, Lichtspektren mit unterschiedlicher Intensitätsdistribution über die verschiedenen Wellenlängen aussendet. \ref{eq:planck} beschreibt die Energiedichte \(U\) in Bezug auf Frequenz \(f\) und die Oberflächentemperatur \(T_s\), wobei \(k_B\) die Boltzmann Konstante, \(c\) die Lichtgeschwindigkeit im Vakuum und \(h\) das Planck'sche Wirkungsquantum ist \cite{planck}.
-
-\begin{align}
-	U(f, T) = \frac{8 \pi h f^3}{c^3 \cdot \left(exp\left(\frac{h f}{k_B T_s}\right) - 1\right)}\label{eq:planck}
-\end{align}
-
-Die Energiedichteverteilung hat ihr Maximum normalerweise im infraroten Spektrum. Wird zusätzlich die Emissivität des Objekts mit einbezogen, so kann aus dem gemessenen Photonenfluss die Oberflächentemperatur errechnet werden \cite{Protection}. Konkret wird das in Wendelstein 7-X durch Bolometer umgesetzt. Einfallende Photonen treffen die Oberfläche des Messgeräts und heizen diese auf. Das wird durch eine Matrix von Widerstandsthermometern registriert, von denen jedes einzelne einem Kamerapixel entspricht \cite{bolometer}. Oder: Einfallende Photonen treffen auf einen Schirm und heizen ihn auf. Dieser wird durch Infrarotkameras beobachtet, welche nach entsprechender Kalibration eine lokal aufgelöste Messung ermöglichen.
-
-\section{Erste Ergebnisse und Vergleiche}
-\subsection{Vergleich der Oberflächentemperatur des Divertors in OP1.2b und OP2 und Einfluss auf Erosionsprozesse}
-Den größten Unterschied zwischen OP1.2b und OP2 in Hinsicht auf die Erosionsprozesse in W7-X stellt der Austausch des Divertors dar. Der Wechsel von ungekühlten, feinkörnigen Graphitkacheln (Quelle?) zu wassergekühlten HHF-CFC Divertortargets bringt eine Änderung der Materialeigenschaften ebenso wie eine deutlich geringere Oberflächentemperatur mit sich. Letztere ist auf das Abführen von Wärme durch die tieferliegenden Wasserleitungen zurückzuführen. Hatte sich der Divertor in OP1.2b über den Tag noch deutlich aufgeheizt (von einer Durchschnittstemperatur der TM2h und TM3h von ca. \qty{100}{\degreeCelsius} auf über \qty{200}{\degreeCelsius}) und teilweise lokale Werte jenseits von \qty{700}{\degreeCelsius} erreicht, ist die Temperatur in OP2 zu allen Tageszeiten ähnlich (Durchschnitt von \qty{25}{\degreeCelsius} bis \qty{40}{\degreeCelsius} auf TM2h und TM3h). Lokale Maxima in OP2 weisen Temperaturen um \qty{220}{\degreeCelsius} auf. Wird der Bereich der Strikeline betrachet, liegt der Standardwert der Oberflächentemperatur bei \qty{550}{\degreeCelsius} in OP1.2b und \qty{150}{\degreeCelsius} in OP2. Grob gesagt kann von einer Viertelung der Maximaltemperatur gesprochen werden (Quelle Motojima).\\
-
-Werden die obigen Temperaturen und Standardwerte für Elektronendichte und -temperatur in die Formeln für Zerstäbungsausbeuten und Erosionsraten eingesetzt, so zeigt sich ein geringer Einfluss des Temperaturunterschieds. Unter Nutzung von \(n_e\) = \qty[per-mode = symbol]{2.3e19}{\per\m\tothe{3}} und \(T_e\) = \qty{13}{eV} und der Formeln ... ergibt sich für \(T_{s, OP1}\) = \qty{550}{\degreeCelsius} und \(T_{s, OP2}\) = \qty{150}{\degreeCelsius} eine chemische Zerstäubungsausbeute \(Y_{chem}\) von ... für die niedrige Oberflächentemperatur und ... für die hohe. Die physikalische Zerstäubungsausbeute ist temperaturunabhängig und hat demnach in beiden Beispielen einen Wert von ... Mit diesen repräsentative Parametern ergibt sich für OP1.2b eine Erosionsrate von ..., für OP2 liegt sie bei ...  
-
-\section{Formelzeichen}
-\begin{align*}
-	_e &- \text{Index für elektronenbezogene Größen}\\
-	_i &- \text{Index für ionenbezogene Größen}\\
- 	k_B &- \text{Boltzmann Konstante}\\
- 	M &- \text{Molare Masse}\\
- 	Z &- \text{Kernladungszahl}\\
- 	n &- \text{Teilchendichte}\\
- 	T_s &- \text{Oberflächentemperatur des Targets}\\
- 	\Gamma &- \text{Teilchenflussdichte}\\
- 	f_i &- \text{Ionenkonzentration}\\
- 	q_i	&- \text{Ionisationszustand}\\
- 	Y &- \text{Zerstäubungsausbeute}\\
- 	Y_{chem} &- \text{Ausbeute durch chemische Erosion}\\
- 	Y^{damage} &- \text{Zerstäubungsausbeute für Bindungsspaltung}\\
- 	Y^{therm} &- \text{Zerstäubungsausbeute durch thermische Sublimation}\\
- 	Y^{surf} &- \text{Zerstäubungsausbeute durch Reaktion schneller Ionen mit Targetatomen}\\
- 	Y^{self} &- \text{Selbstzerstäubungsausbeute}\\
- 	s_n &- \text{Nuklearer Wirkungsquerschnitt (nuclear stopping cross section)}\\
- 	E &- \text{Energie des auftreffenden Ions}\\
- 	E_{TF} &- \text{Thomas-Fermi Energie}\\
- 	E_{th} &- \text{Schwellenenergie für physikalische Zerstäubung}\\
- 	E_{thd} &- \text{Schwellenenergie für Bindungsspaltung}\\
- 	E_{ths} &- \text{Schwellenenergie für Reaktion schneller Ionen mit Targetatomen}\\
- 	E_s &- \text{Sublimationswärme}\\
- 	\epsilon &- \text{Reduzierte Energie}\\
- 	a_L &- \text{Lindhard Screening-Länge}\\
- 	\gamma_k &- \text{Kinematischer Faktor}\\
- 	\alpha &- \text{Einfallswinkel der Ionen bezüglich der Flächennormalen}\\
- 	\alpha_{max} &- \text{\(\alpha\) mit maximaler physikalischer Zerstäubungsausbeute}\\
- 	P_{redeposition} &- \text{Wahrscheinlichkeit der Wiederablagerung}\\
- 	s &- \text{Haftungskoeffizient}\\
- 	Q_y &- \text{Fitparameter}\\
- 	f_y &- \text{Yamamura Parameter}\\
- 	b, c, f &- \text{Fitparameter für Modell nach \cite{BehrischEckstein}}\\
- 	c_i, s_i, C_d &- \text{Parameter für chemische Erosion nach \cite{PWI-Dirk}}\\
- 	C, D, c^{sp3} &- \text{Parameter für chemische Erosion nach \cite{RothChemErosion}}
-\end{align*}

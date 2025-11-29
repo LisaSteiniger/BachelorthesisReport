@@ -1,0 +1,300 @@
+\chapter{Theorie und Berechnung der Erosion}
+
+Grundsätzlich werden zwei Hauptprozesse der Erosion unterschieden, wenn W7-X betrachtet wird. Einerseits gibt es die physikalische Zerstäubung, die auf Impulsübertrag und dem Herausschlagen von Wandmaterial durch Stöße basiert. Sie ist der dominante Prozess bei Targetoberflächentemperaturen unter \qty[per-mode = symbol]{600}{\K}. Andererseits können die auftreffenden Ionen aber auch durch chemische Reaktionen flüchtige Verbindungen mit den Atomen des Targets bilden, was als chemische Erosion bezeichnet wird. Diese Erosionsart herrscht zwischen \qty[per-mode = symbol]{600}{\K} und \qty[per-mode = symbol]{1200}{\K} vor. Ist die Targetoberflächentemperatur noch höher, setzt strahlungsbedingte Sublimation und schließlich thermische Evaporation ein. Beide Prozesse spielen für die Untersuchung der Erosionsraten in W7-X jedoch keine übergeordnete Rolle \cite{PWI-Dirk}.\\  
+
+\section{Physikalische Zerstäubung}
+Physikalische Zerstäubung ist auf energetische Teilchen zurückzuführen, die durch Kollision mit den Targetatomen zu deren Emission führen. Grundsätzlich werden Stöße mit den Targetatomkernen als elastisch betrachtet, während solche unter Beteiligung von Targetelektronen als inelastisch angenommen werden. Auftreffende Ionen können daher entweder an der Oberfläche reflektiert werden oder in das Targetmaterial eindringen und dort elektronisch oder nuklear gestoppt werden. Die Eindringtiefe und der erodierende Effekt hängen dabei mit der Ionenmasse und -größe sowie der Teilchenenergie zusammen. Kleine, leichte Teilchen dringen tiefer ein als große, schwere Ionen, da es zu weniger Interaktion mit dem Targetmaterial kommt.\\
+
+Niederenergetische und leichte Teilchen führen nur wenige Stöße aus, bis sie gestoppt werden. Demnach müssen nur Stöße erster und zweiter Ordnung betrachtet werden. Das bedeutet, nur jene Targetatome, die direkt vom Projektil getroffen wurden, und solche, welche von diesen gestoßen wurden, haben die Möglichkeit, emittiert zu werden. Aus diesem Grund finden alle zugehörigen Prozesse in den obersten Schichten des Targetmaterial statt (ca. \qty[per-mode = symbol]{5}{\AA}). Für Ionen mit mittlerer Energie bildet sich eine Kaskade aus, weil angestoßene Teilchen wiederum andere Targetatome treffen. Diese Kaskade setzt sich in Richtung der Targetoberfläche fort, wo Targetmaterial freigesetzt wird. Werden noch höhere Teilchenenergien betrachtet, kommt es zu thermischen Spikes. Diese bezeichnen eine Teilchenkaskade hoher Dichte, die durch den Übertrag großer Energiemengen in ein eher kleines Volumen innerhalb kurzer Zeit ausgelöst wird. Sie können zu hohen Temperaturen, thermischer Sublimation, Schockwellen und Kraterbildung führen \cite{PWI-Dirk, PWI-Selinger}.\\ 
+
+Zur Berechnung der Zerstäubungsausbeute durch physikalische Zerstäubung gibt es verschiedene semi-empirische Formeln. Einige sind universell einsatzfähig und unterscheiden sich für verschiedene Kombinationen aus Targetmaterial und auftreffendem Ion nur durch die Tabellenwerte der Fitparameter. Andere sind speziell für die Selbstzerstäubung ausgelegt, die den Beschuss eines Materials mit gleichartigen Atomkernen beschreibt. Für diese Arbeit sind zwei Ansätze gewählt worden, je nach Art des Ions, wobei Wasserstoff, Sauerstoff und Kohlenstoff untersucht werden. Für das Auftreffen von H- und O-Ionen wird zur Berechnung eine überarbeitete Version der Bohdansky-Formel angewandt, für die Selbstzerstäubung von kohlenstoffbasierten Targets wird hingegen der Ansatz von Behrisch und Eckstein mit passenden Fitparametern gewählt. \\
+
+\subsection{Wasserstoff- und Sauerstoffionen auf Kohlenstoffbasierten Werkstoffen}\label{sec:physHO}
+Die Bohdansky-Formel ist ein immer wieder optimiertes Set von Gleichungen, dass die Berechnung der physikalischen Zerstäubungsausbeute für diverse Kombinationen aus Targetmaterial und Ion ermöglicht. Sie kann für Selbstzerstäubung ebenso angewandt werden wie für unterschiedliche Elemente als Target und Ion, die Parameter müssen nur entsprechend ausgewählt werden. Dazu gehören der einheitslose Tabellenwert \(Q_y\) (Tab. \ref{tab:Qy}), die Thomas-Fermi-Energie \(E_{TF}\) in (\unit{eV}) (Tab. \ref{tab:ETF}), die Schwellenenergie \(E_{th}\) (Tab. \ref{tab:EthPhys}) in (\unit{eV}) und die Sublimationswärme \(E_s\) in (\unit{eV}) (Tab. \ref{tab:Es}).\\
+
+\begin{table}[!]
+	\caption{Werte für den Parameter \(Q_y\) zur Berechnung der physikalischen Zerstäubungsausbeute (Quelle?)}\label{tab:Qy}
+	\centering
+	\begin{tabular}{|c||c|c|c|c|c|c|}\hline
+		Target/Ion&Wasserstoff&Deuterium&Tritium&Helium&Selbstzerstäubung&Sauerstoff\\\hline\hline
+		Beryllium&0.07&0.11&0.14&0.28&0.67&-\\\hline
+		Kohlenstoff&0.05&0.08&0.10&0.2&0.75&1.02\\\hline
+		Eisen&0.07&0.12&0.16&0.33&10.44&-\\\hline
+		Molybdän&0.05&0.09&0.12&0.24&16.27&-\\\hline
+		Wolfram&0.04&0.07&0.1&0.2&33.47&-\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!]
+	\caption{Werte für den Parameter \(E_{TF}\) in (eV) zur Berechnung der physikalischen Zerstäubungsausbeute (Quelle?)}\label{tab:ETF}
+	\centering
+	\begin{tabular}{|c||c|c|c|c|c|c|}\hline
+		Target/Ion&Wasserstoff&Deuterium&Tritium&Helium&Selbstzerstäubung&Sauerstoff\\\hline\hline
+		Beryllium&256&282&308&720&2208&-\\\hline
+		Kohlenstoff&415&447&479&1087&5688&9298\\\hline
+		Eisen&2544&2590&2635&5517&174122&-\\\hline
+		Molybdän&4719&4768&4817&9945&533127&-\\\hline
+		Wolfram&9871&9925&9978&20376&1998893&-\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!]
+	\caption{Werte für die Schwellenenergie der physikalischen Zerstäubung \(E_{th}\) zur Berechnung der physikalischen Zerstäubungsausbeute (Quelle?)}\label{tab:EthPhys}
+	\centering
+	\begin{tabular}{|c||c|c|c|c|c|c|}\hline
+		Target/Ion&Wasserstoff&Deuterium&Tritium&Helium&Selbstzerstäubung&Sauerstoff\\\hline\hline
+		Beryllium&13&13&15&16&24&-\\\hline
+		Kohlenstoff&31&28&30&32&53&61.54\\\hline
+		Eisen&61&32&23&20&31&-\\\hline
+		Molybdän&172&83&56&44&49&-\\\hline
+		Wolfram&447&209&136&102&62&-\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!]
+	\caption{Werte für die Sublimationswärme \(E_s\) in (eV) zur Berechnung der physikalischen Zerstäubungsausbeute (Quelle?)}\label{tab:Es}
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}\hline
+		Beryllium&Kohlenstoff&Eisen&Molybdän&Wolfram\\\hline\hline
+		3.38&7.42&4.34&6.83&8.68\\\hline
+	\end{tabular}
+\end{table}
+
+In die Formel müssen die Energie \(E\) in (\unit{eV}), die molare Masse \(M\) in (\unit{u}) und die Atomdichte des Targetmaterial \(n\) in (\unit[per-mode = symbol]{\per\m\tothe{3}}) eingesetzt werden. Index 1 bezieht sich auf das Ion, Index 2 auf das Targetatom. Die Lindhard Screening-Länge \(a_L\) wird in (\unit{m}) berechnet, der Einfallswinkel mit maximaler Zerstäubungsausbeute \(\alpha_{max}\) in (\unit{rad}). Die reduzierte Energie \(\epsilon\), der nukleare Wirkungsquerschnitt \(s_n\), der kinetmatische Faktor \(\gamma_k\), der Yamamura Parameter \(f_y\) sowie die Zerstäubungsausbeuten \(Y\) sind einheitslos. 
+
+\begin{align}
+	\epsilon &= \frac{E}{E_{TF}}\\
+	s_n(\epsilon) &= \frac{0.5 ln(1 + 1.2288 \epsilon)}{\epsilon + 0.1728\sqrt{\epsilon} + 0.008 \epsilon^{0.1504}}\label{eq:sn}\\
+	Y(E, \alpha = 0^\circ) &= Q_y s_n(\epsilon) \left(1 - \left(\frac{E_{th}}{E}\right)^{2/3}\right) \left(1 - \frac{E_{th}}{E}\right)^{2}\label{eq:Y0}\\
+	f_y &= \sqrt{E_s} \left(0.94 - 0.00133 \frac{M_2}{M_1}\right)\\
+	a_L &= \frac{0.04685 \cdot 10^{-9}}{(Z_1^{2/3} + Z_2^{2/3})^{1/2}}\\
+	\gamma_k &= \frac{4 M_1 M_2}{(M_1 + M_2)^2}\\
+	\alpha_{max} &= \frac{\pi}{2} - \frac{a_L n^{1/3}}{\sqrt{2 \epsilon \sqrt{E_s/(\gamma_k E)}}}\\
+	Y(E, \alpha) &=\frac{Y(E, \alpha = 0^\circ)}{cos(\alpha)^{f_y}} exp\left(f_y \left[1 - \frac{1}{cos(\alpha)}\right] cos(\alpha_{max})\right) \label{eq:Yalpha}
+\end{align}
+Diese Formel ist nur anzuwenden für \(E \gg E_{th}\), andernfalls ist \(Y\) = 0, da die Energie der Ionen nicht ausreicht, um physikalische Zerstäubung zu verursachen. \cite{PWI-Dirk} p.80ff, genauere Quellen: Y(0) \cite{Bohdansky1980, Bohdansky1981, Bohdansky1984}, sn, epsilon, aL \cite{RevisedBohdansky}, Y(alpha) \cite{Yamamura}, gamma, fy, amax 168
+
+\subsection{Selbstzerstäubung von Kohlenstoffbasierten Werkstoffen}\label{sec:physC}
+Behrisch und Eckstein schlagen einen abweichenden Ansatz zur Berechnung der physikalischen Zerstäubungsausbeute vor. Er kann auf Selbstzerstäubung angewandt werden, ist aber prinzipiell nicht darauf begrenzt. Sind Target und Ion jedoch aus verschiedenen Elementen, so muss statt der Sublimationswärme \(E_s\) in (\unit{eV}) (Tab. \ref{tab:Es}) z.B. 1eV eingesetzt werden wie im Fall von Wasserstoffisotopen auf C-Targets.\\
+
+\begin{table}[!]
+	\caption{Werte für die Fitparameter für die Fitfunktionen \(f\), \(b\) und \(c\) zur Berechnung der physikalischen Zerstäubungsausbeute mit\\\(Fitfunktion = y0 + \sum A_i \cdot exp\left(-\frac{E - x0}{t_i}\right)\)(Quelle?)}\label{tab:fitMarkus1}
+	\centering
+	\begin{tabular}{|c||c|c|c|}\hline
+		Parameter/Funktion&f&b&c\\\hline\hline
+		y0&4.55878&1.222&0.85257\\\hline
+		x0&25.5644&27.59683&37.36542\\\hline
+		A1&20.17943&10.24535&-0.10577\\\hline
+		t1&29.8123&31.09355&346.95644\\\hline
+		A2&12.08692&7.29825&-0.11142\\\hline
+		t2&150.66038&185.60025&346.94662\\\hline
+		A3&8.99236&4.90847&-0.12915\\\hline
+		t3&946.68968&1040.42162&346.92395\\\hline    
+	\end{tabular}
+\end{table}
+
+\begin{table}[!]
+	\caption{Werte für den Fitparameter \(Y0\) zur Berechnung der physikalischen Zerstäubungsausbeute in Abhängigkeit der Teilchenenergie \(E\) in (eV) mit \(E_{min} \ll E \le E_{max}\)(Quelle?)}\label{tab:fitMarkus2}
+	\centering
+	\begin{tabular}{|c|c||c|}\hline
+		E\_{min}&E\_{max}&Y0\\\hline\hline
+		\(-\infty\)&0&0\\\hline
+		0&40& -3.318e-4 + 1.167e-5 \(\cdot E\)\\\hline
+		40&50&-0.00141 + 3.86e-5 \(\cdot E\)\\\hline
+		50&70&-0.0046 + 1.0245e-4 \(\cdot E\)\\\hline
+		70&100&-0.01206 + 2.09e-4 \(\cdot E\)\\\hline
+		100&140&-0.02231 + 3.115e-4 \(\cdot E\)\\\hline
+		140&200&-0.0256 + 3.35e-4 \(\cdot E\)\\\hline
+		200&300&-0.019 + 3.02e-4 \(\cdot E\)\\\hline
+		300&500&0.005 + 2.22e-4 \(\cdot E\)\\\hline
+		500&1000&0.054 + 1.24e-4 \(\cdot E\)\\\hline
+		1000&3000&0.1425 + 3.55e-5 \(\cdot E\)\\\hline
+		3000&\(\infty\)&0\\\hline
+	\end{tabular}
+\end{table}
+
+Fitparameter, die zur Berechnung benötigt werden sind \(f(E)\), \(b(E)\), \(c(E)\) und \(Y0(E)\). Die Abhängigkeit von der Ionenenergie \(E\) in (\unit{eV}) ist für sie alle gegeben, sie sind in Tab. \ref{tab:fitMarkus1}, \ref{tab:fitMarkus2} zu finden. \(\alpha_0\) ist ein einheitsloser Korrekturfaktor, \(\alpha_{max}\) wieder der Einfallswinkel der maximalen physikalischen Zerstäubung in (\unit{rad}).\\
+
+\begin{align}
+	\alpha_0 &= \pi - arccos\left(\sqrt{\frac{1}{1 + E/E_s}}\right)\\
+	\alpha_{max} &= \frac{2 \alpha_0}{\pi} \cdot arccos\left(\frac{b}{f}\right)^{1/c}\\
+	Y(E, \alpha) &= Y(E, \alpha = 0^\circ) \left(cos\left[\left(\frac{\pi \alpha}{2 \alpha_0}\right)^c\right]\right)^{-f} exp \left(b \left[1 - \frac{1}{cos\left[\left(\frac{\pi \alpha}{2 \alpha_0}\right)^c\right]}\right]\right)\label{eq:YphysEck}\\
+\end{align}
+
+In dieser Arbeit wird die obige Gleichung zur Berechnung der Selbstzerstäubung von Kohlenstoff genutzt \cite{BehrischEckstein} p.101.
+
+\section{Chemische Erosion}
+Chemische Erosion basiert auf der chemischen Reaktion mit den auftreffenden Ionen. Im Fall von Sauerstoff bildet sich das flüchtige Kohlenstoffmonoxid und in deutlich geringeren Mengen auch Kohlenstoffdioxid (Quelle?).\\
+
+Wasserstoffisotope reagieren mit den C-Atomen des Graphits zu Kohlenwasserstoff-Molekülen des Typs \(C_xH_y\) wie beispielsweise Methan. Diese sind entweder sofort flüchtig, weil das reagierende Ion und die Temperatur des Targets genug Energie zum Überwinden der Bindungsenergie bereitstellen (thermisch aktivierte Kohlenwasserstoff-Emission) oder werden später durch den Zusammenstoß energetischer Teilchen mit dem Target herausgelöst (Ionen-induzierte Desorption). Dass auch bei sehr niedrigen Targettemperaturen chemische Erosion stattfindet, hängt damit zusammen, dass komplexe Kohlenwasserstoffe an der Targetoberfläche nur schwach gebunden sind. Ihre Sublimationswärme ist deutlich niedriger als die von Graphit, sodass auch niederenergetische Ionen die Emission durch Stöße herbeiführen können \cite{PWI-Dirk, RothChemErosion}.\\
+
+Allgemein gilt für chemische Erosion: Je höher die Oberflächentemperatur des Targets (eigentlich Maximum bei \qty[per-mode = symbol]{600}{\K}...) und der Teilchenfluss, desto höher die Erosionsrate. Außerdem spielt die chemische Struktur des Targets ein Rolle: Je weniger geordnet die Struktur, desto höher die Abtragung \cite{PWI-Selinger}.\\
+
+Chemische Erosion unterscheidet in der Berechnung der Zerstäubungsausbeute strikt zwischen Ionenarten. Während \(Y_{chem}\) für Sauerstoffinonen auf kohlenstoffbasierten Targets in der Literatur durch einen konstanten Wert gegeben ist, verhält es sich bei Beschuss mit Wasserstoff-Ionen anders. Hier gibt es mehrere semi-empirische Gleichungen, die die Abhängigkeiten des Prozesses modellieren. Sie sollen in hier kurz vorgestellt werden. 
+
+\subsection{Sauerstoffionen auf Kohlenstoffbasierten Werkstoffen}
+Über den gesamten, für Fusionsforschung relevanten Bereich von Plasmaparametern bleibt die chemische Erosion von kohlenstoffbasierten Oberflächen durch O-Ionen nahezu unverändert. Eine Änderung der Oberflächentemperatur des Target hat ebenso wenig eine signfikante Auswirkung auf \(Y_{chem}\) wie eine Umstellung der Ionentemperatur oder der Ionenflussdichte. Die Literatur setzt daher eine konstante Zerstäubungsausbeute von 0.7 an (Quelle?).\\
+
+\subsection{Flussdichten Berechnen}
+Da chemische Erosion durch Wasserstoffionen eine Abhängigkeit von der Anzahl der auftreffenden Ionen zeigt, soll der Berechnung von \(Y\) zunächst die Ermittlung von Ionenflussdichten \(\Gamma\) in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}) vorangestellt werden. Sie setzt die Kenntnis von Elektronendichte \(n_e^{LCFS}\) (in der last closed flux surface (LCFS)) in (\unit[per-mode = symbol]{\per\m\tothe{3}}), Elektronen- und Ionentemperatur (\(T_e\), \(T_i\)) in (\unit{K}) sowie der Konzentration \(f_i\) des jeweiligen Ions und seiner Masse \(m_i\) in (\unit{kg}) voraus. Die Boltzmann-Konstante \(k_B\) ist in (\unit[per-mode = symbol]{\eV\per\K}) einzusetzen, \(q_i\) beschreibt den Ladungszustand des Ions (z.B. 1 für H\(^+\)). Es gilt
+
+\begin{align}
+	n_e^{LCFS} &= \sum q_i n_i\\
+	n_i &= f_i n_e^{LCFS}\\
+	1 &= \sum f_i q_i\\
+\end{align}
+
+für die Konzentrationen und Ionendichten der einzelnen Ionen. Für die zugehörigen Flussdichten ermöglicht folgender Zusammenhang die Berechnung: 
+
+\begin{align}
+	\Gamma_i &= f_i \sqrt{\frac{k_B(T_e + T_i)}{m_i}} n_e^{LCFS} \text{.}\label{eq:flux}\\
+\end{align}
+
+Vereinfachend wird in der Fusionsforschung oft \(T_e = T_i\) angenommen \cite{IntroStellarator, PWI-Dirk} p.12 und 199f.\\
+
+\subsection{Wasserstoffionen auf Kohlenstoffbasierten Werkstoffen}
+Chemische Zerstäubung durch Wasserstoffionen kann mithilfe der folgenden zwei Formeln berechnet werden. Beide sind in ihrer Struktur ähnlich und basieren auf denselben Arbeiten, die ältere Variante wird zuerst vorgestellt.\\ 
+
+\begin{table}[!]
+	\caption{Tabellenwerte der Fitparameter \(Q_y\) und \(C_d\) sowie der Schwellenenergien \(E_{th}\), \(E_{thd}\) und \(E_{ths}\) in (eV)  zur Berechnung der chemischen Zerstäubungsausbeute durch Wasserstoff, Deuterium und Tritium (Quelle?)}\label{tab:ParameterChem}
+	\centering
+	\begin{tabular}{|c||c|c|c|}\hline
+		Parameter/Ion&Wasserstoff&Deuterium&Tritium\\\hline\hline
+		\(Q_y\)&0.035&0.1&0.12\\\hline
+		\(C_d\)&250&125&83\\\hline
+		\(E_{th}\)&31&27&29\\\hline                                                                        
+		\(E_{thd}\)&15&15&15\\\hline   
+		\(E_{ths}\)&2&1&1\\\hline  
+	\end{tabular}
+\end{table}
+
+Der semi-empirische Charakter der Formeln geht mit der Nutzung verschiedenster Fitparameter einher. Zu diesen gehören die tabellarisch gegebenen \(Q_y\), \(C_d\) und \(c_i\) Werte (Tab. \ref{tab:ParameterChem}, Eq. \ref{eq:ci}), sie sind einheitslos. Des weiteren ist die Kenntnis diverser Schwellenenergien nötig, um \(Y_{chem}\) berechnen zu können. Für die thermisch aktivierte Kohlenwasserstoff-Emission ist das \(E_{ths}\), für Ionen-induzierte Desorption \(E_{thd}\) und für chemische Erosion im Allgemeinen \(E_{th}\). Auch diese Energien sind Tabellenwerte (Tab. \ref{tab:ParameterChem}), die in die Gleichung in (\unit{eV}) einzusetzen sind.  Diese Einheit ist ebenfalls anzuwenden für die Teilchenenergie \(E\) und die Oberflächentemperatur des Targets \(T_s\), während die Ionenflussdichte \(\Gamma\) in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}) angegeben werden muss. 
+
+Für fünf Subprozesse der chemischen Erosion wird zuerst das einheitslose \(s_i\) aus \(T_s\) und \(c_i\) sowie \(\Gamma\) berechnet.
+
+\begin{align*}
+	c_i &= [1.865, 1.7, 1.535, 1.38, 1.26] \label{eq:ci}\\
+	\begin{split}
+		s_i &= \frac{1}{1 + 3 \cdot 10^7 exp(-1.4/T_s)}\\ &\times \frac{2 \cdot 10^{-32} \Gamma + exp(-c_i/T_s)}{2 \cdot 10^{-32} \Gamma + (1 + 2/\Gamma \cdot 10^{29} exp(-1.8/T_s))exp(-c_i/T_s)}\\
+	\end{split}\\
+\end{align*}
+
+Anschließend wird jeweils \(Y_{surf}\) für thermisch aktivierte Kohlenwasserstoff-Emission sowie \(Y_{damage}\) und \(Y_{therm}\) für Ionen-induzierte Desorption berechnet und zur Gesamtausbeute des Subprozesses zusammengefügt. Dabei ist \(s_n\) der nukleare Wirkungsquerschnitt nach Eq. \ref{eq:sn} und \(Y(E, \alpha=0^\circ)\) die physikalische Zerstäubungsausbeute bei senkrechtem Auftreffen der Ionen auf das Target nach Eq. \ref{eq:Y0}. Zuletzt werden die einzelnen Subprozesse aufaddiert.
+
+\begin{align*}
+	Y^{damage} &= Q_y s_n(\epsilon) \left(1 - \left(\frac{E_{thd}}{E}\right)^{2/3}\right) \left(1 - \frac{E_{thd}}{E}\right)^{2}\\
+	&= 0 \text{ if } E < E_{thd}\\
+	Y_i^{surf} &= \frac{s_i Y(E, \alpha = 0^\circ)}{1 + exp([E - 65]/40)} \text{MIT ETHS ODER MIT ETH???}\\
+	&= 0 \text{ if } E < E_{ths}\\
+	Y_i^{therm} &= \frac{0.0439 s_i \cdot exp(-c_i/T_s)}{2 \cdot 10^{-32} \Gamma + exp(-c_i/T_s)}\\
+	Y_i &= Y_i^{surf} + Y_i^{therm} (1+ C_d \cdot Y^{damage})\\
+	Y_{chem}(E, T_s, \Gamma) &= \frac{Y_1 + Y_2 + Y_3}{4} + \frac{Y_4 + Y_5}{8}
+\end{align*}
+
+Die berechnete Gesamtausbeute ist eine gute Näherung für niedrige Flussdichten unter \qty[per-mode = symbol]{e21}{\per\m^{2}\per\s} \cite{PWI-Dirk} p.85f, \cite{RothChemErosion1996}.\\
+
+Alternativ zur obigen Version kann die chemische Erosion durch Wasserstoff auch nach dieser überarbeiteten Gleichung berechnet werden.
+
+\begin{align}
+	C &= \frac{1}{1 + 10^{13} exp(-2.45/k_B T_s)}\\
+	c^{sp3} &= C \cdot \frac{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T_s)}{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T_s) \cdot exp(-1.8/k_B T_s) \cdot 2 \cdot 10^{29}/\Gamma}\\
+	Y^{therm} &= c^{sp3} \cdot \frac{0.033 exp(-1.7/k_B T)}{2 \cdot 10^{-32} \Gamma + exp(-1.7/k_B T)}\\
+	Y^{surf} &= c^{sp3} \cdot \frac{Y(E, \alpha = 0^\circ)_{1eV<E_{th}<2eV}}{1 + exp((E - 90)/50)}\\
+	Y_{chem} &= Y^{surf} + Y^{therm} \cdot (1 + C_d \cdot Y(E, \alpha = 0^\circ))\label{eq:YchemRoth}\\
+\end{align}
+
+Sie ist ebenso semi-empirisch, verzichtet jedoch auf die Unterteilung in Subprozesse abgesehen von thermisch aktivierter Kohlenwasserstoff-Emission und Ionen-induzierter Desorption. Die Teilchenenergie \(E\) ist in (\unit{eV}) anzugeben, die Ionenflussdichte \(\Gamma\) in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}), während die Oberflächentemperatur des Targets \(T_s\) in (\unit{K}) eingesetzt werden muss. Die Boltzmann-Konstante \(k_B\) ist gegeben in (\unit[per-mode = symbol]{\eV\per\K}), der Tabellenwert \(C_d\) ist einheitslos. \(Y(E, \alpha=0^\circ)\) ist die physikalische Zerstäubungsausbeute bei senkrechtem Auftreffen der Ionen auf das Target nach Eq. \ref{eq:Y0}, wobei statt \(E_{th}\) \(E_{ths}\) in (\unit{eV}) eingesetzt wird (Tab. \ref{tab:ParameterChem}). Auch hier gilt wieder, dass die berechnete Gesamtausbeute nur für niedrige Flussdichten unter \qty[per-mode = symbol]{e21}{\per\m\tothe{2}\per\s} eine gute Näherung ist \cite{RothChemErosion} Formel(11)ff.\\
+
+Wenn hohe Ionenflüsse auf eine Oberfläche treffen, hat das zur Folge, dass die obigen Formeln zur Beschreibung der chemischen Erosion die in der Realität beobachteten Ergebnisse nicht richtig abbilden. In diesem Fall kann durch die folgende Korrekturformel nachgebessert werden. Von hohen Ionenflüssen wird dabei gesprochen, sofern die Teilchenflussdichte bei mindestens \qty[per-mode = symbol]{e21}{\per\m\tothe{2}\per\s} liegt. \(\Gamma\) ist in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}) einzusetzen\cite{chemErosionHF}.
+
+\begin{align}
+	Y_{chem}(E, T_s, \Gamma) =\frac{Y_{chem, lowflux}(E, T_s, \Gamma)}{1 + (\Gamma/(6 \cdot 10^{21}))^{0.54}}	
+\end{align}
+
+\section{Warum diese Formeln?}
+Zerstäubungsprozesse zu berechnen ist eine keineswegs triviale Aufgabe. Die dazu notwendigen Formeln auf analytische Art herzuleiten ist in den seltensten Fällen möglich, da dazu die integralen Transportgleichungen gelöst werden müssen. Sigmund (Quelle) hat sich ausführlich damit beschäftigt und für Atom-Atom-Kollisionen unter Vernachlässigung der Energieverluste an Elektronen eine gute Näherung gefunden, die jedoch nur für spezielle Potentiale Gültigkeit besitzt. In der Praxis wird wegen dieser Schwierigkeiten statt eines analytischen Ansatzes in der Regel eher das ingenieurswissenschaftliche Vorgehen gewählt: Erhobene Datensets werden ausgewertet und durch semiempirische Fits beschrieben. Auf dieser Grundlage haben sich mehrere konkurrierende Gleichungen ergeben, die der Ermittlung von Zerstäubungsausbeuten dienen. Entsprechend umsichtig muss die passende Formel für den zu untersuchenden Fall ausgewählt werden, um die Realität möglichst genau wiederzugeben.\\
+
+Für die physikalische Zerstäubung gibt es zwei bekannte Ansätze zur Berechnung. Die Gleichung von Bohdansky ist vielfach überarbeitet worden und stellt gemeinsam mit der Formel von Yamamura die eine Möglichkeit dar, die physikalische Zerstäubungsausbeute zu bestimmen. Auf der anderen Seite haben Behrisch und Eckstein ebenfalls einen Vorschlag zur Berechnung dieser Größe gemacht. Tatsächlich werden in dieser Arbeit beide Ansätze genutzt, die Begründung für dieses Vorgehen soll in diesem Abschnitt dargelegt werden.\\
+
+Ursprünglich entwickelte Bohdansky seine Formel für \(Y_{phys}(E, \alpha = 0^\circ)\) unter der Nutzung des Thomas-Fermi-Potentials mit dem nuklearen Wirkungsquerschnitt 
+
+\begin{align*}
+	s_n^{TF}(\epsilon) = \frac{3.441 \sqrt{\epsilon} ln(\epsilon + 2.718)}{1 + 6.355 \sqrt{\epsilon} + \epsilon(6.882 \sqrt{\epsilon} - 1.708)} 
+\end{align*}
+
+aufbauend auf Sigmunds Erkenntnissen. Die grundlegende Struktur dieser ersten Version entspricht dabei aber bereits Formel \ref{eq:Y0}.  Im Vergleich mit experimentell ermittelten Daten zeigt die Formel mit \(s_n^{TF}\) jedoch große Unterschiede, da Schwellenenergien überschätzt werden. Die Revision der Gleichung ergab, dass die Anpassung des Potentials eine deutliche Verbesserung in der Übereinstimmung von Experimentaldaten und Berechnungen erzielt, wenn statt des Thomas-Fermi-Potentials das Krypton-Kohlenstoff Potential eingesetzt wird. Der zugehörige nukleare Wirkungsquerschnitt \(s_n\) ist gegeben in \ref{eq:sn}. Um nun auch winkelabhängige Zerstäubungsausbeuten berechnen zu können, wird die überarbeitete Bohdansky Gleichung mit Yamamuras Formel verknüpft, wie in Formel \ref{eq:Yalpha} angegeben.\\
+
+Die Genauigkeit dieser beiden Gleichungen, einerseits für \(Y_{phys}(E, \alpha = 0^\circ)\), andererseits für \(Y_{phys}(E, \alpha)\), ist von W. Eckstein, C. Garcia-Rosales, J. Roth und W. Ottenberger am Max-Planck-Institut für Plasmaphysik in Garching getestet worden. Sie haben verschiedenste Kombinationen von Targetmaterialien und auftreffenden Ionen unterschiedlicher Energien untersucht und dabei sowohl Messdaten als auch Simulationsdaten mit den Fits nach Bohdansky und Yamamura verglichen. Dabei ist durch Begrenzung der Targettemperatur der Abtragungseffekt durch chemische Erosion nach Möglichkeit ausgeschlossen worden \cite{EcksteinIPP}.\\
+
+Die Analyse hat ergeben, dass Bohdanskys Gleichung gute Ergebnisse liefert, solange die Ionenenergien weder zu dicht an der Schwellenenergie liegen, noch Beträge von wenigen \unit{eV} übersteigen. Yamamuras Gleichung hingegen hat Probleme mit Selbstzerstäubung und schweren Ionen, sofern diese zu niedrige Energien aufweisen. Zusätzlich wird Zerstäubung für Target-Ionen-Kombinationen mit niedrigem Massequotienten \(M_{Target}/M_{Ion} < 3\) ungenau abgebildet \cite{EcksteinIPP}.\\
+
+Daraus folgt für diese Arbeit, dass die Zerstäubung von kohlenstoffbasierten Materialien durch Wasserstoff problemlos durch Bohdanskys und Yamamuras Gleichungen beschrieben werden kann, da \(T_i\) im Bereich von \qty{}{eV} liegt und das Masseverhältnis bei \(\approx\) 12 liegt. Für Sauerstoff ist der Massequotient \(<\) 3, allerdings kann bei Sauerstoff die Analyse nicht sauber durchgeführt werden, weil chemische Erosion nicht unterbunden werden kann. Deshalb wird Sauerstoff hier noch zu den leichten Elementen gezählt und die durch ihn verursachte physikalische Zerstäubung ebenfalls durch Bohdansky und Yamamura Formel beschrieben. Die Selbstzerstäubung hingegen kann durch diese Gleichungen nicht akkurat wiedergegeben werden. Daher findet in diesem Fall die von Eckstein und Behrisch vorgeschlagene Alternative Anwendung, die in Formel \ref{eq:YphysEck} gegeben ist. Sie beruht auf Fits basierend auf den gesammelten Daten in \cite{EcksteinIPP}.\\
+
+\section{Berechnung der Absolute Zerstäubungsausbeute und Dicke der Erosionsschicht}
+Zur Berechnung der Gesamtausbeute sollen alle Teilchenenergien beachtet werden, wodurch eine Gewichtung der unterschiedlichen Energien notwendig wird. Die Energieverteilung der auftreffenden Teilchen \(g(E)\) wird zu diesem Zweck eingeführt, ihre Herkunft wird in \ref{sec:LangmuirPot} näher erläutert. Die Integration der energieabhängigen Zerstäubungsausbeute multipliziert mit \(g(E)\) über alle Energien liefert die Gesamtausbeute, wobei die Ionenflüsse \(\Gamma_i\) in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}), die Ionentemperatur \(T_i\) in (\unit{K}) sowie die Boltzmann-Konstante \(k_B\) in (\unit[per-mode = symbol]{\eV\per\K}) eingesetzt werden müssen.
+
+\begin{align}
+	g(E) &= 4 \cdot \left(\frac{1}{2 T_i}\right)^2 exp \left(-\frac{E - 3 T_i q}{T_i}\right) (E - 3 T_i q)\\
+	Y_{i, total} &= \int_{3 k_B T_i q_i}^{\infty} Y_i(E) g(E) dE\label{eq:totalY}\\
+\end{align}
+
+Wird die Bruttoerosion betrachtet, die Wiederablagerung also nicht berücksichtigt, so gilt für die Dicke der abgetragenen Schicht \(\Delta_{erosion}\) in (\unit{m}) sowie die Erosionsrate \(\Delta_{erosion}/t_{discharge}\) in (\unit[per-mode = symbol]{\m\per\s})
+
+\begin{align}
+	\frac{\Delta_{erosion}}{t_{discharge}} &= \frac{1}{n_{carbon}} \sum \Gamma_i Y_{i,total}\label{eq:erosionRate}\\
+	\Delta_{erosion} &= \frac{t_{discharge}}{n_{carbon}} \sum \Gamma_i Y_{i,total}\label{eq:erosionLayer}\\
+\end{align}
+
+bei eingesetzter Entladungszeit \(t_{discharge}\) in (\unit{s}) und der Atomdichte \(n_{carbon}\) in (\unit[per-mode = symbol]{\per\m\tothe{3}})\cite{PWI-Dirk} p.200.
+
+\section{Langmuir Potential}\label{sec:LangmuirPot}
+Für Erosionsprozesse ist die Energie der auftreffenden Ionen von zentraler Bedeutung. Bei Zusammenstößen ist der übertragene Impuls höher, je schneller das Teilchen ist und beeinflusst so die physikalische Zerstäubung. Für chemische Erosion müssen C-C-Bindungen gespalten werden, damit Wasserstoffatome die freien Bindungsstellen einnehmen können. Auch diese Energie wird durch Stoßprozesse bereitgestellt.\\
+
+Grundsätzlich ist die Geschwindigkeitsverteilung der Ionen eine Maxwell-Verteilung und abhängig von der Ionentemperatur. Daraus lässt sich die Energieverteilung \(g(E)\) herleiten, die sich allein durch die thermische Bewegung der Teilchen ergibt und solche Teilchen betrachtet, die sich auf das Target zubewegen.
+
+\begin{align}
+	g(E) &= 4 \cdot \left(\frac{1}{2 T_i}\right)^2 exp \left(-\frac{E}{T_i}\right) (E)\\
+\end{align}
+
+Die auf den Divertor auftreffenden Ionen sind jedoch schneller als durch diese Verteilung angegeben. Der Grund dafür ist das Langmuir Potential, welches zur Ausbildung eines elektrischen Feldes führt, in dem geladene Teilchen beschleunigt werden. \(g(E)\) verschiebt sich und wird zu
+
+\begin{align}
+	g(E) &= 4 \cdot \left(\frac{1}{2 T_i}\right)^2 exp \left(-\frac{E - 3 T_i q}{T_i}\right) (E - 3 T_i q) \text{.}\\
+\end{align}
+
+Im folgenden soll kurz erläutert werden, was das Langmuir Potential ist und warum es sich aufbaut.\\
+
+Werden die einzelnen Komponenten eines Plasmas betrachtet - schwere, positiv geladene Ionen und leichte, negativ geladene Elektronen - so zeigt sich, dass die Elektronentemperatur höher ist als die der Ionen. Daraus folgt, dass Elektronen mobiler sind als Ionen, ein Effekt, der durch ihre niedrigere Masse noch verstärkt wird. Demnach erreichen Elektronen eine neutrale Platte wie den Divertor schneller und laden sie gegenüber dem Plasma negativ auf. Es bildet sich ein Potentialunterschied, der zum Aufbau eines elektrischen Felds direkt über den Divertortargets führt - dem sogenannten Langmuir Sheath. Dieses wirkt abstoßend auf weitere Elektronen, die langsamen unter ihnen erreichen den Divertor nicht mehr. Auf die positiven Ionen wird im Gegenzug eine anziehende Kraft ausgeübt, welche sie zum Target hin beschleunigt. Der Energiegewinn eines Ions durch die Beschleunigung hängt dabei von seinem Ionisationszustand und seiner Temperatur ab. Nach einer Weile stellt sich ein Gleichgewicht ein, Ionen- und Elektronenflussdichte sind an jeder Position des Langmuir Sheaths gleich. Der nun zwischen Plasma und Divertor vorliegende Potentialunterschied wird als Langmuir Potential bezeichnet. Im Falle eines externen Magnetfelds ist dem Langmuir Sheath noch ein Presheath vorgelagert. In dieser Zone ist der Potentialunterschied zum Plasma deutlich geringer und im Gegensatz zum Langmuir Sheath herrscht hier Quasineutralität \cite{PWI-Dirk}.\\
+
+\section{Erosionsrelevante Plasmaereignisse}
+Es gibt verschiedene, zeitlich beschränkte Ereignisse im Plasma, die zu lokal erhöhten Erosionsraten führen. Sie können zum größten Teil in den Berechnungen dieser Arbeit nicht beachtet werden, erklären aber mögliche Unterschiede zu experimentell ermittelten Werten. Einige werden deshalb in diesem Abschnitt beschrieben.\\
+
+Die sogenannten ELMs (edge localized modes) bezeichnen bis zu \qty{1}{ms} lange magnetohydrodynamische Ereignisse, welche durch einen periodischen Ausstoß von Teilchen und thermischer Energie aus dem Core Plasma gekennzeichnet sind. Sie werden unter anderem genutzt, um die Konzentration von Verunreinigungen im Core Plasma zu reduzieren und beispielsweise durch Fusion gebildetes Helium zu entfernen. Gleichzeitig erhöhen die sich entlang der Magnetfeldlinien ausbreitenden ELMs jedoch die Materialabtragung, da eine erhöhte Anzahl schneller Ionen auf die Wandkomponenten trifft. In Folge dessen schmelzen oder evaporieren diese, mitunter stoßen sie auch Tröpfchen flüssigen Materials ab.\\
+
+Als Hot Spots werden Bereiche von PFCs bezeichnet, die eine deutlich erhöhte Oberflächentemperatur aufweisen. Diese führt zu einer verstärkten Sublimation, von der auch Elektronen betroffen sind. Daraus ergibt sich eine Reduktion des Langmuir Potentials, wodurch die Anzahl der auf die Hot Spots treffenden Plasmaelektronen steigt. Das heizt die betroffenen Bereiche zusätzlich auf, es kommt zur Selbstverstärkung des Effekts und einer gesteigerten Abtragung von Wandmaterial.\\
+
+Zuletzt soll noch die Lichtbogenbildung (arcing) erklärt werden. Sie ist ein in instabilen Plasmas auftretender Effekt, der durch einen Potentialabfall von \qty{10}{V} - \qty{30}{V} im Langmuir Sheath entsteht. Es bildet sich eine lokale Entladung mit hohen Strömen, die in Form eines Lichtbogens sichtbar werden. Die Kathode ist dabei die Wandkomponente und die Anode das Plasma. Der Lichtbogen bewegt sich dann zufällig über die Wandoberfläche und erodiert im Schnitt 10\(^{17}\) - 10\(^{18}\) Atome \cite{PWI-Dirk}.
+
+\section{Maßnahmen zur Reduktion von Erosion}
+Allgemein kann Erosion reduziert werden, indem die Konzentration von Verunreinigungen im Plasma reduziert wird. Besonders deutlich wird das am Beispiel von Sauerstoff, der unter anderem von den Wandelementen freigesetzt wird. Sind diese unbehandelt, so kann deutlich mehr Sauerstoff entweichen und anschließend zur Erosion der PFCs beitragen. Wird der Innenraum hingegen regelmäßig boriert, bildet sich also auf den Oberflächen der Wandkomponenten ein dünner Film aus Bor, so ist das Ausgasen von Sauerstoff deutlich geringer. Daraus resultiert eine niedrigere Abtragung von Material. Für W-7X mit ungekühltem Testdivertor ist dieser Effekt als eine Reduktion um 80\% an den Divertortargets datiert worden \cite{MarkusOP1.2a, MarkusOP1.2b}.\\
+
+Außerdem kann die Nettoerosion reduziert werden, indem abgetragene Teilchen sofort wieder abgelagert werden, im Idealfall genau an der Stelle, wo sie emittiert worden sind. Wenn sie die Targetoberfläche verlassen, sind die Verunreinigungen neutral. Sie bewegen sich daher vom Langmuir Potential und dem Magnetfeld unbeeinflusst auf geraden Bahnen, bis sie, meist durch Zusammenstöße mit Elektronen, ionisiert werden. Dann beginnen die Ionen, um die Magnetfeldlinien zu gyrieren und treffen so gegebenenfalls wieder auf das Target. Die Wahrscheinlichkeit dafür ist höher, je kleiner die Ionisationslänge im Vergleich zum Gyroradius ist und je kleiner beide Längen an sich sind.\\
+
+Zusätzlich spielt für die Wiederablagerung der Haftungskoeffizient des Ions eine Rolle. Er gibt an, wie hoch die Wahrscheinlichkeit ist, dass ein auftreffendes Ion am Target abgelagert wird. Nicht-flüchtiger atomarer Kohlenstoff und Beryllium haben beispielsweise durchgängig hohe Haftungskoeffizienten, während die von Kohlenwasserstoffen mit der Teilchenenergie variieren. Hat das auftreffende Kohlenwasserstoff-Molekül nur thermische Energie, so ist die Haftungswahrscheinlichkeit gering, während bei einigen \unit{eV} der Haftungskoeffizient hoch ist. Für Teilchenenergien, die höher als die Bindungsenergie des Kohlenwasserstoffs sind, kommt es beim Auftreffen auf die Wand zum Zerfall des Moleküls in die einzelnen Atome. Diese haben dann je nach Element unterschiedliche Haftungskoeffizienten \cite{PWI-Dirk}.\\
+
+\subsection{Einfluss der Wiederablagerung}
+Die Berücksichtigung der Wiederablagerung führt zu einer Reduktion der Teilchenflussdichten von Targetatomen \(\Gamma_{erosion,net}\)und reduziert somit die Dicke der Erosionsschicht \(\Delta_{erosion}\). Dabei werden Bruttoerosion und Wiederablagerung gegengerechnet, indem ihre Teilchenflussdichten, \(\Gamma_{erosion,gross}\) und \(\Gamma_{redeposition}\),  subtrahiert werden. Dieser Effekt kann unter Kenntnis der Wahrscheinlichkeit der Wiederablagerung \(P_{redeposition}\), des Haftungskoeffizienten von C-Atomen auf kohlenstoffbasierten Oberflächen \(s\) sowie der Zerstäubungsausbeute \(Y_i\) und der Konzentration \(f_i\) der Fremdionen berechnet werden. Alle diese Größen sind einheitslos. Außerdem müssen die Werte für die Selbstzerstäubungsausbeute \(Y_{self}\) (einheitslos), den Elektronenfluss \(\Gamma_e\) in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}), die Entladungszeit \(t_{discharge}\) in (\unit{s}) und die Atomdichte \(n_{carbon}\) in (\unit[per-mode = symbol]{\per\m\tothe{3}}) vorliegen. 
+
+\begin{align}
+	\Gamma_{redeposition} &= s P_{redeposition} \frac{\Gamma_e \sum Y_i f_i}{1 - P_{redeposition} (Y_{self + 1 - s})}\\
+	\Gamma_{erosion,gross} &= \frac{\Gamma_e \sum Y_i f_i}{1 - P_{redeposition} (Y_{self + 1 - s})}\\
+	\Gamma_{erosion,net} &= \Gamma_{erosion,gross} - \Gamma_{redeposition}\\
+	&= (1 - s P_{redeposition}) \frac{\Gamma_e \sum Y_i f_i}{1 - P_{redeposition} (Y_{self} + 1 - s)}\\
+	&= \Gamma_e Y_{eff}\\
+	\Delta_{erosion} &= \frac{t_{discharge}}{n_{carbon}} \cdot \Gamma_{erosion,net}
+\end{align}
+
+\(\Gamma\) wird in (\unit[per-mode = symbol]{\per\m\tothe{2}\per\s}) ausgegeben, \(\Delta_{erosion}\) in (\unit{m}) \cite{PWI-Dirk} p. 201f.
+
+\subsection{Einfluss von Verunreinigungen im Plasma}
+Verunreinigungen, die ins Plasma gelangen, beeinflussen dessen Verhalten. Sind sie im Core Plasma, verunreinigen sie den Treibstoff für die Fusion und können sie bei zu hoher Konzentration zum Erliegen bringen beziehungsweise die Entzündung verhindern. Im Randbereich erhöhen Plasmaverunreinigungen die Abstrahlung von Energie, was im Extremfall zum Kollaps des Plamas führen kann. In geringen Mengen sind die Ionen dort jedoch erwünscht, um die Wärmebelastung gleichmäßig auf alle PFCs zu verteilen und die Divertoren nicht zu überhitzen. Dazu werden mitunter sogar extra Verunreinigungen erzeugt, indem Gasstöße ins Randplasma gegeben werden \cite{PWI-Dirk}.\\

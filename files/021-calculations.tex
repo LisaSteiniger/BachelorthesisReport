@@ -1,0 +1,74 @@
+\chapter{Berechnung}
+\begin{table}[!]
+	\caption{Werte für die molaren Ionenmassen \(M_i\) in (\unit{u}), die tatsächliche Masse \(m_i\) in (\unit{kg}) ergibt sich aus \(M_i \cdot u = M_i \times 10^{-3}/N_A\)
+		% \cite{PWI-Dirk}
+		}\label{tab:mi}
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}\hline
+		Wasserstoff&Deuterium&Tritium&Kohlenstoff&Sauerstoff\\\hline\hline
+		1.008&2.012&3.016&12.011&15.999\\\hline
+	\end{tabular}
+\end{table}
+
+Zur Berechnung der erosionsbezogenen Größen erfolgt nach den im Abschnitt \ref{chap:theory} gegebenen Formeln. In diese Formeln gehen neben Mess- und Schätzwerten auch feste Parameter ein. Diese sind im selben Abschnitt in den entsprechenden Tabellen gegeben. Dazu kommen noch die Ionenmassen der beteiligten Ionenspezies, die sich auf die in Tab. \ref{tab:mi} befindlichen Werte belaufen.
+
+\section{Inputparameter}
+\subsection{Messdaten}
+Zur Berechnung der Zerstäubungsausbeuten werden die Messergebnisse der Langmuir Sonden für Elektronendichte \(n_e\) und Elektronentemperatur \(T_e\) und sowie der Infrarotkameras zur Bestimmung der Oberflächentemperatur der Divertortargets \(T_s\) herangezogen. Elektronentemperatur und Elektronendichte werden weiterhin mit den durch die He-Beam Diagnostik ermittelten Werten verglichen, um ihre Fehler besser einordnen zu können.\\
+
+Die Konzentration der Verunreinigungen wird basierend auf den Messungen von CXRS und DRGA abgeschätzt und durch eine Trendanalyse der HEXOS Daten zeitlich validiert. Den größten erodierenden Effekt haben aufgrund ihrer erhöhten Konzentration und Reaktivität Wasserstoff-, Kohlenstoff- und Sauerstoffionen. Sie werden deshalb in dieser Analyse betrachtet, wohingegen beispielsweise Argon, Neon, Helium und Stickstoff vernachlässigt werden. Letztere werden zwar zu Diagnostik- oder Kontrollzwecken ins Plasma eingeblasen, erreichen aber dennoch nur vernachlässigbare Konzentrationen im Plasma. Weiterhin sind sie zwar mehrheitlich schwerer als H, C und O, mit Ausnahme von N jedoch aufgrund ihres Edelgascharakters zugleich nicht reaktiv.\\
+
+\subsection{Ionentemperatur}
+Zusätzlich müssen weitere Annahmen getroffen werden, um die Berechnungen auszuführen. Dazu gehört die Gleichsetzung von Ionen- und Elektronentemperatur, die eine übliche Näherung in Fusionsexperimenten darstellt. In Realität ist die Ionentemperatur in W7-X jedoch geringer als die Elektronentemperatur.\\
+
+\subsection{Einfallswinkel der Ionen}
+Eine weitere unbekannte Größe ist der Einfallswinkel der Ionen auf die Divertortargets. Dieser ist kompliziert zu bestimmen, da er vom Einfallswinkel der Magnetfeldlinien auf die Targets, der Gyration der Ionen, der Ablenkung durch (\(E \times B\))-Drifts, sowie der Beschleunigung durch das Langmuir Potential und der Anziehung zwischen Ion und Oberfläche (Anstreben einer Bindung) abhängt. Hinzu kommt der Umstand, dass die Oberfläche der Divertortargets keineswegs glatt ist, sondern eine zeitlich variierende Rauigkeit aufweist. \\
+
+Im nicht-exponierten Zustand ist die tatsächliche Oberflächennormale im Mittel um \qty{38}{\degree} zur theortischen, glatten Oberflächennormalen geneigt. In Bereichen starker Exponierung und entsprechend hoher Erosion wird sie geglättet, sodass die reelle Oberflächennormale zur theoretischen im Durchschnitt um \qty{24}{\degree} geneigt ist \cite{MarkusOP1.2b}. Die Magnetfeldlinien selbst fallen in einem Winkel von \(\approx\) \qty{88}{\degree} auf die Targets \cite{TM2013}, wodurch sich ein Einfallswinkel der Magnetfeldlinien von \qty{88}{\degree} - \qty{38}{\degree} = \qty{50}{\degree} beziehungsweise \qty{88}{\degree} - \qty{24}{\degree} = \qty{64}{\degree} in Bezug auf die tatsächliche Oberflächennormale ergeben.\\
+
+Nun ist der Einfallswinkel der Magnetfeldlinien aber nicht der der Ionen. Der Zusammenhang dieser beiden Winkel wurde in \cite{ionIncidentAngle_Chodura, ionIncidentAngle_Curreli} untersucht und für die gegebenen Einfallswinkel der Magnetfeldlinien von \(\approx\) \qty{50}{\degree} bis \qty{64}{\degree} geben diese Referenzen Ioneneinfallswinkel für heiße Ionen (\(T_e = T_i\)) von grob \qty{15}{\degree} bis \qty{50}{\degree} an. Für glattere, stärker erodierte Oberflächen ist der Ioneneinfallswinkel dabei größer, weshalb für die Berechnung der Zerstäubungsausbeute ein Winkel \(\alpha\) von \qty{40}{\degree} angenommen wird. Dieser Winkel beinhaltet die Einflüsse von Beschleunigung im Langmuir Potential, Gyration und (\(E \times B\))-Drifts, nicht jedoch die Anziehung durch Anstreben einer chemischen Bindung.\\
+
+\subsection{Dichte des Divertortargets}
+Neben \(n_e\), \(T_e = T_i\), \(T_s\), \(\alpha\) sowie den Konzentrationen der beteiligten Ionenspezies sind für die Berechnung der Erosion und Deposition weitere Parameter entscheidend. In erster Linie gehört dazu die Dichte des Divertortargets \(\rho\).\\
+
+\(\rho\) beläuft sich für HHF-CFC Targets auf durchschnittlich \qty[per-mode = symbol]{1.9e+6}{\g\per\m\tothe{3}}. Daraus ergibt sich eine Teilchendichte \(n_{carbon}\) von \qty[per-mode=symbol]{9.526e28}{\per\m\tothe{3}} nach der Formel
+
+\begin{align*}
+	n_{carbon} = \frac{\rho N_A}{M_C} \text{    ,}
+\end{align*}
+
+wobei \(M_C\) die molare Masse von Kohlenstoff und \(N_A\) die Avogadrozahl ist.\\
+
+\subsection{Plasmazeit}
+Die Plasmazeit zu bestimmen, ist wiederum nicht trivial. Zunächst muss identifiziert werden, welche Entladungen überhaupt in Betracht gezogen werden sollen. Grundsätzlich sind Entladungen jeder Konfiguration einzubeziehen. Allerdings können und sollen Test- und Reinigungsprogramme ausgeschlossen werden, da sie nicht maßgeblich zum Erosionsgeschehen beitragen, die Plasmazeit jedoch in die Höhe treiben. Zu diesem Zweck werden alle Experimentalprogramme aus OP2.2 und 2.3 ausgelesen und solche, die als "gas valve test", "conditioning" oder "sniffer test" gekennzeichnet sind, herausgefiltert. Sie bezeichnen beispielsweise Tests zur Funktionalität der Gaseinlassventile, sogenannte "pulse trains" zur Reinigung des Plasmagefäßes oder auch Borierungen. Warum sie nicht zur Plasmazeit beitragen dürfen, wird im weiteren Verlauf dieses Kapitels noch einmal erläutert.\\
+
+Für Plasmaentladungen, die die Erosion beeinflussen, muss zuerst die Dauer bestimmt werden. Üblicherweise wird diese vom Beginn bis zum Ende der Heizung des Plasmas definiert, sofern das Experimentalprogramm nicht zuvor abbricht. Es spielt dabei keine Rolle, auf welche Art das Plasma geheizt wird - Electron Cyclotron Resonance Heating (ECRH), Neutral Beam Injection (NBI) und Ion Cyclotron Resonance Heating (ICRH) sind allesamt inbegriffen. Um diese Zeitpunkte zu bestimmen, könnte nun entweder die Daten aller dieser Heizsysteme ausgelesen und geprüft werden. Sie unterliegen jedoch leichten Schwankungen, sodass immer ein Schwellenwert gewählt werden muss, der überschritten werden soll. Dadurch könnten fälschlich Entladungen herausgefiltert werden, die eine zu niedrige Heizleistung aufweisen. Stattdessen wird deshalb auf interne Trigger zurückgegriffen, um die Entladungsdauer zu berechnen. \(t_1\) markiert den Beginn der Entladung, der normalerweise durch das Einsetzen der ECRH bestimmt wird. Für Entladungen, ohne ECRH verschiebt er sich auf das Einsetzen der alternativen Heizquelle. Beendet wird der erosionsrelevante Teil der Entladung durch \(t_4\), welcher entweder dem Abschalten aller Heizquellen oder dem Programmabbruch entspricht. Diese Trigger können aus einer internen Datenbank ausgelesen werden und ergeben als \(t_4 - t_1\) die Entladungsdauer \(t_{discharge}\). Fehlt einer dieser Trigger aus irgendeinem Grund, so wird \(t_{discharge}\) gleich \qty{0}{s} gesetzt.
+
+\section{Fehlende Messdaten}
+Nicht für alle Entladungen und alle Zeitpunkte liegen Messdaten von Infrarotkameras vor, teilweise fallen einzelne Langmuir Sonden für ganze Entladungen oder einzelne Messungen aus. Diese fehlenden Messwerte müssen durch Intra- oder Extrapolation ersetzt werden, damit die gesamte Kampagne betrachtet werden kann und gegebenenfalls ein Vergleich mit experimentell bestimmten Abtragungen durchgeführbar wird. Das Vorgehen unterscheidet sich dabei je nachdem, ob die Daten einer ganzen Entladung fehlen oder nur einzelne Messzeiten. Genauso muss unterschieden werden, ob für eine Konfiguration überhaupt Messwerte vorliegen oder nicht.\\
+
+\subsection{Fehlende Zeitpunkte innerhalb einer Entladung}
+Sind an einer Position von einer Diagnostik Messwerte aufgenommen worden, allerdings mit durch Aussetzer verursachten Datenausfällen, so können die fehlenden Werte ersetzt werden. Dazu werden die zeitlich benachbarten Messdaten ermittelt und durch einen linearen Zusammenhang in Verbindung gebracht. Zwischenwerte können aus diesem ermittelt werden. Dieses Vorgehen wird für Elektronentemperatur und -dichte sowie Oberflächentemperatur angewandt. Das ist gerechtfertigt, weil die Messwerte im Verlauf der Entladung keinen starken Schwankungen unterliegen. Zusätzlich ist durch die Vielfalt an Entladungsformen durch Variation der Experimentalprogramme keine generelle Fitform bestimmbar, die besser geeignet wäre. \\
+
+\subsection{Fehlende Entladung}  
+Fehlen für eine Entladung alle Messwerte für \(n_e\) und/oder \(T_e\) an einer Messpositionen, wird die Berechnung an dieser Position für diese Entladung verworfen. Sie wird allerdings später in die Erosionseffekte der Konfiguration eingerechnet, indem ihre Dauer dort berücksichtigt wird (siehe folgender Absatz). Fehlen hingegen die Messdaten für \(T_s\) an einer Position für die ganze Entladung, während Elektronendichte und -temperatur zumindest zeitweise bekannt sind, kann für die Oberflächentemperatur des Targets ein Defaultwert gesetzt werden. Dieser beläuft sich auf den repräsentativen Wert \qty{320}{K} und ist insofern gerechtfertigt, dass \(T_s\) einen geringen Einfluss auf die Zerstäubungsausbeute und alle daraus folgenden Größen hat. Das wird im nächsten Kapitel anhand des Vergleichs von OP1.2b mit OP2 deutlich.\\
+
+\subsection{Fehlende Entladungen innerhalb einer Konfiguration}
+Für alle Einzelentladungen einer Konfiguration, für die die erosionsbezogenen Größen an einer Position nicht bestimmt werden können, muss bei der Berechnung der Erosionseffekte der ganzen Konfiguration Sorge getragen werden. Dies geschieht, indem eine Hochrechnung der bekannten Gesamterosion \(\Delta_{erosion, known, config}\) beziehungsweise -deposition \(\Delta_{deposition, known, config}\) erfolgt. Diese Größen bezeichnen die aufsummierten Effekte aller Entladungen dieser Konfiguration, für die Daten verfügbar waren, welche die Bestimmung der Erosion und Deposition erlaubten. Die Formel für die Hochrechnung ist
+
+\begin{align*}
+	\Delta_{erosion, total, config} &= \Delta_{erosion, known, config} \cdot \frac{t_{total, config}}{t_{erosion, known, config}}\\
+	\Delta_{deposition, total, config} &= \Delta_{deposition, known, config} \cdot \frac{t_{total, config}}{t_{deposition, known, config}}\\
+\end{align*}
+
+mit der gesamten Plasmazeit in dieser Konfiguration \(t_{total, config}\) und der Plasmazeit in dieser Konfiguration, für die Erosion beziehungsweise Deposition berechnet werden konnte (\(t_{erosion, known, config}\), \(t_{deposition, known, config}\)).\\
+
+\subsection{Fehlende Daten für ganze Konfigurationen}
+Liegen für keine Entladung einer Konfiguration Daten für Erosion und Deposition an einer Position vor, so muss in der Gesamtrechnung für die gesamte Plasmazeit beider Kampagnen abgeschätzt werden, welchen Effekt diese Entladungen gehabt haben. Auch hier greift das oben beschriebene Muster
+
+\begin{align*}
+	\Delta_{erosion, total} &= \Delta_{erosion, known} \cdot \frac{t_{total}}{t_{erosion, known}}\\
+	\Delta_{deposition, total} &= \Delta_{deposition, known} \cdot \frac{t_{total}}{t_{deposition, known}}\\
+\end{align*}
+
+mit der gesamten Plasmazeit aller Konfiguration \(t_{total}\) und der Plasmazeit aller Konfigurationen, für die Erosion beziehungsweise Deposition hochgerechnet werden konnte (\(t_{erosion, known}\), \(t_{deposition, known}\)). \(\Delta_{erosion, known}\) und \(\Delta_{deposition, known}\) sind in diesem Fall die aufaddierten Effekte aller Konfigurationen, für die an dieser Position Daten ermittelt wurden.\\

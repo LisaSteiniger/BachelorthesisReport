@@ -11,7 +11,15 @@ Im Gegensatz zum Divertor muss die Langmuir Sonde jedoch nicht neutral geladen s
 
 Zu Langmuir Sonden ist anzumerken, dass sie nicht nur gewollte Wechselwirkungen mit dem Plasma ausführen. Ihre Anwesenheit im Plasma verändert dieses lokal, sodass Messergebnisse verfälscht werden. Sie können des Weiteren die Elektronentemperatur systematisch unterschätzen, weil Sekundärelektronen ebenso gemessen werden wie Plasmaelektronen. Sekundärelektronen sind Elektronen, die durch den Beschuss des Drahts mit Photonen, Elektronen und Ionen frei werden. Außerdem ist zu beachten, dass die Sonden innerhalb von elektrischen Sheaths ungeeignete Messgeräte sind \cite{LPfunction} p.114ff.\\
 
-Diese Fehlerquellen sollten beachtet werden, wenn mit Langmuir Sonden und ihren Daten gearbeitet wird. Zumindest das Problem mit Messungen im elektrischen Sheath kann für diese Arbeit jedoch VERNACHLÄSSIGT werden, da sich die Drahtspitzen mit \qty{5}{mm} \cite{ArunLP} über dem Divertor außerhalb des nur wenige Zehntel Millimeter (Elektronen haben Debye Länge von \qty{0.9e-5}{\m} (aktuell?) \cite{Debye}, Langmuir Sheath ist nur wenige Debye Längen dick \cite{PWI-Dirk} p.35) hohen Langmuir Sheaths befinden. Das dem Langmuir Sheath vorgelagerte Presheath ist weiter ausgedehnt, beeinträchtigt die Funktion der Langmuir Sonden aber nur MINIMAL, da in diesem Bereich der Potentialunterschied zum Plasma nur noch sehr klein ist \cite{PWI-Dirk}.???\\
+Diese Fehlerquellen sollten beachtet werden, wenn mit Langmuir Sonden und ihren Daten gearbeitet wird. Zumindest das Problem mit Messungen im elektrischen Sheath kann für diese Arbeit jedoch vernachlässigt
+%(?)
+werden, da sich die Drahtspitzen mit \qty{5}{mm} \cite{ArunLP} über dem Divertor außerhalb des nur wenige Zehntel Millimeter hohen Langmuir Sheaths befinden (Ionen haben Gyrationsradius von 
+%\qty{0.9e-5}{\m} Quelle?, 
+Langmuir Sheath hat Dicke in der selben Größenordnung 
+%Quelle?
+). Das dem Langmuir Sheath vorgelagerte Presheath ist weiter ausgedehnt, beeinträchtigt die Funktion der Langmuir Sonden aber nur minimal
+%(?)
+, da in diesem Bereich der Potentialunterschied zum Plasma nur noch sehr klein ist \cite{PWI-Dirk}.\\
 
 An dieser Stelle soll nun im Besonderen nochmal auf die Langmuir Sonden in W7-X eingegangen werden. Seit OP2 hat Wendelstein 7-X einen wassergekühlten HHF-CFC Divertor, der thermischen Belastungen bis \qty[per-mode = symbol]{10}{\MW\per\m\tothe{2}} standhält und somit für lange Entladungen bis \qty{30}{min} geeignet ist \cite{W7XtechDetailsOP2}. Die Langmuir Sonden sind zwar aus Wolfram und haben daher einen höheren Schmelzpunkt als kohlenstoffbasierte Materialien \cite{ArunLP}, sind aber im Gegensatz zum Divertor zu klein, um mit Wasser gekühlt zu werden. Zusätzlich wird durch das Einführen ins Plasma ohnehin eine deutlich höhere Belastung von \qty[per-mode = symbol]{100}{\MW\per\m\tothe{2}} bis \qty[per-mode = symbol]{200}{\MW\per\m\tothe{2}} erwartet. Eine längere Aufenthaltszeit im Plasma würde daher zweifelsohne zum Schmelzen der Sonden führen, was deren Zerstörung und außerdem die Verunreinigung des Plasmas mit Wolfram bedeutet. Um dieses Szenario zu vermeiden, handelt es sich in W7-X um sogenannte Pop-up Langmuir Sonden, die in Intervallen ins Plasma ein- und ausgefahren werden. Die Zeit im Plasma ist auf höchstens \qty{50}{ms} begrenzt, die Zeit außerhalb des Plasmas dient der Abkühlung der Sonden. Dies führt zu einer diskontinuierlichen Messung mit einer Datenerhebung aller \qty{2}{s} bis \qty{3}{s}.\\
 
@@ -33,6 +41,7 @@ Zur Berechnung der erosionsbezogenen Größen ist die Kenntnis der Oberflächent
 Auch gibt es auf den gewählten Flächen keine Surface Layers. Das sind Ablagerungen von Kohlenstoffatomen auf dem Divertor, wobei sich die entstehende chemische Struktur deutlich vom Rest des Divertors unterscheidet. Surface Layers haben eine schlechte thermische Verbindung zum Divertor und werden deshalb schnell sehr heiß, weil keine Wärme abgeführt werden kann. Sie sind deshalb auf Infrarot-Kamerastreams besonders auffällig und spiegeln keinesfalls die reale Divertortemperatur wieder.
 
 \section{Spektroskopie}
+%Überarbeiten
 Borierungen, also das Fluten des Plasmagefäßes mit Borgas, finden in regelmäßigen Abständen statt. Sie dienen der Versiegelung der Oberflächen im Plasmagefäß von W7-X durch einen dünnen Borfilm und reduzieren so das Ausgasen von vor allem Sauerstoff. Dadurch geht die Verunreinigung des Plasmas zurück, was sich positiv auf die Erosion auswirkt. Es ist aus diesem Grund wichtig zu wissen, wie sich die Konzentration von Verunreinigungen am Plasmarand zwischen zwei Borierungen ändert, weil diese in die Berechnung der Erosionsraten einfließen. Da die Datenaufbereitung von Spektroskopiedaten sehr aufwendig ist, werden nur drei Entladungen betrachtet - eine kurz nach einer Borierung, eine mittig zwischen zwei Borierungen und eine kurz vor der nächsten Borierung. Die Werte zu allen Zeiten dazwischen müssen durch Extrapolation ermittelt werden.\\
 
 \begin{table}[!]
@@ -52,10 +61,3 @@ In OP2.2 wurde monatlich, in OP2.3 aller zwei Monate boriert. Die konkreten Tage
 
 Basierend auf diesen Kriterien werden die folgenden Entladungen zur Analyse der Verunreinigungskonzentrationen genutzt: 20241127.009 kurz nach der letzten Borierung von OP2.2, 20250508.071 einen Monat nach der letzten Borierung von OP2.3 und 20250401.013 kurz vor der zweiten Borierung von OP2.3. Die Benennung der Entladungen folgt dem Schema YYYYMMDD.ID, wobei ID die Nummer der Plasmaentladung am jeweiligen Tag ist.
 
-\section{Fehlende Messdaten}
-Nicht für alle Entladungen und alle Zeitpunkte liegen Messdaten von Infrarotkameras vor, teilweise fallen einzelne Langmuir Sonden für ganze Entladungen oder einzelne Messungen aus. Diese fehlenden Messwerte müssen durch Intra- oder Extrapolation ersetzt werden, damit die gesamte Kampagne betrachtet werden kann und gegebenenfalls ein Vergleich mit experimentell bestimmten Abtragungen durchgeführt werden kann. Das Vorgehen unterscheidet sich dabei je nachdem, ob die Daten einer ganzen Entladung fehlen oder nur einzelne Messzeiten.\\
-
-\subsection{Fehlende Zeitpunkte}
-Sind von allen Diagnostiken Messwerte aufgenommen worden, allerdings mit durch Aussetzer verursachten Datenausfällen, so können die fehlenden Werte ersetzt werden. Dazu werden die zeitlich benachbarten Messdaten ermittelt und durch einen linearen Zusammenhang in Verbindung gebracht. Zwischenwerte können aus diesem ermittelt werden. Dieses Vorgehen wird für Elektronentemperatur und -dichte sowie Oberflächentemperatur angewandt. Das ist gerechtfertigt, weil die Messwerte im Verlauf der Entladung keinen starken Schwankungen unterliegen. Nur zu Beginn und zum Ende der Entladung muss anders verfahren werden, da sich die Plasmaparameter in diesen Zeitintervallen ändern.  
-
-\subsection{Fehlende Entladung}  

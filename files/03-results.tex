@@ -17,3 +17,16 @@ Experimentelle Bestimmungen der Ersoionsraten in OP1.2a, OP1.2b und OP2.1 ergabe
 Während die Erosion sich qualitativ zwischen den verschiedenen Kampagnen wenig unterscheidet, ist der quantitative Unterschied in den Erosionsraten zwischen OP1.2a und OP1.2b sehr ausgeprägt. In OP1.2a ist noch eine Nettoerosion von \qtyrange[per-mode=symbol]{5.8}{8.4}{\nm\per\s} aufgetreten, hatte dieser Wert sich in OP1.2b auf \qtyrange[per-mode=symbol]{1.1}{2.5}{\nm\per\s} reduziert. Das wird mit dem Einführen regelmäßiger Borierungen begründet, wodurch die Konzentration von Sauerstoff- und Kohlenstoffionen stark verringert wurde \cite{MarkusOP1.2a, MarkusOP1.2b, erosionOP12}.\\
 
 Bei der Betrachtung der erodierten Oberflächen ist auffällig, dass diese in ihrer Struktur glatter sind als nicht erodierte Bereiche des Divertors. Das hat Einfluss auf den Einfallswinkel von Ionen und damit auf die Erosion, welche auf glatten Oberflächen höher ist \cite{MarkusOP1.2a, MarkusOP1.2b}.
+
+\section{Abschätzung der Dicke der Erosionsschicht}
+Um einschätzen zu können, in welcher Größenordnung sich die Dicke der erodierten Schicht bewegen sollte, wird hier einmal der Vergleich mit anderen Abschätzungen vorgenommen. Zunächst ist festzuhalten, dass nicht mehr erodiert werden kann, als an Kohlenstoff auf die Kacheln aufgetragen war. Dabei ist die Kohlenstoffschicht der Divertortargets von W7-X zwischen \qty{5}{mm} und \qty{8}{mm} dick \cite{TM2013}. Durch die Borierung wird zudem eine dünne Schicht von einigen \qty{10}{\mu m} aus einer Mischung von Kohlenstoff, Bor und Sauerstoff darauf abgelagert \cite{DivertorTiles, MarkusOP1.2b}.\\
+
+Die mit dem Plasma in Berührung kommende Fläche des Divertors ist proportional zur Heizleistung (durch ECRH) und erreichte in OP1.2b ihr Maximum von \qty[per-mode = symbol]{1.5}{\m\tothe{2}} bei \(P_{ECRH}\) = \qty{5}{MW} \cite{MarkusOP1.2a, MfieldsAndWettedArea}. Obgleich in OP2.3 höhere Heizleistungen gefahren wurden, soll im Folgenden mit diesem Schätzwert von \(A\) = \qty[per-mode = symbol]{1.5}{\m\tothe{2}} gearbeitet werden. Zusätzlich spielt das Ergebnis der Berechnung der Menge des zu erwartenden Staubs eine Rolle, es liegt bei \(m\) = \qty{111}{g} für OP2.3
+%(?)
+. Wird die Dichte des Kohlenstoffs \(\rho\) von \qty[per-mode = symbol]{1.9e+6}{\g\per\m\tothe{3}} hinzugenommen und die Annahme einer gleichmäßigen Abtragung im gesamten Bereich der Strikeline, so kann die abgetragene Schichtdicke \(\Delta_{erosion}\) berechnet werden als\\
+
+\begin{align*}
+	\Delta_{erosion} = \frac{V}{A} = \frac{m}{\rho A} \text{.}
+\end{align*}
+
+Es ergibt sich \(\Delta_{erosion} \approx\) \qty{4e-5}{m}. 
